@@ -47,14 +47,14 @@ train_gen = image_gen.flow_from_dataframe(dataframe=pd.DataFrame({'paths': train
                                           target_size=(244, 244),
                                           color_mode='rgb',
                                           class_mode="categorical",
-                                          batch_size=10,
+                                          batch_size=5,
                                           shuffle=True)
 test_gen = image_gen.flow_from_dataframe(dataframe=pd.DataFrame({'paths': test_images, 'labels': test_labels}),
                                          x_col="paths", y_col="labels",
                                          target_size=(244, 244),
                                          color_mode='rgb',
                                          class_mode="categorical",
-                                         batch_size=10,
+                                         batch_size=5,
                                          shuffle=False)
 
 # Plotting a batch with labels
@@ -110,7 +110,7 @@ model.summary()
 plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 
 # Train the model
-history = model.fit(train_gen, epochs=6, validation_data=test_gen, verbose=1)
+history = model.fit(train_gen, epochs=8, validation_data=test_gen, verbose=1)
 
 # Plot accuracy and loss
 plot_accuracy(history)

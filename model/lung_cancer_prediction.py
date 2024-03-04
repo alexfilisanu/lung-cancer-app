@@ -25,6 +25,7 @@ def predict_image_class(image_path):
 
 
 # Example usage:
-image_path = '../dataset/images/diseased/diseased-CT-276.jpg'
+image_path = '../dataset/images/diseased/diseased-CT-675.jpg'
+# image_path = '../dataset/images/normal/normal-CT-675.jpg'
 predicted_class = predict_image_class(image_path)
 print("Predicted Class:", predicted_class)
