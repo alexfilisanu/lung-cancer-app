@@ -5,7 +5,10 @@ import {RouterOutlet} from "@angular/router";
 @Component({
   selector: 'app-admin-layout',
   standalone: true,
-  imports: [NavbarComponent, RouterOutlet],
+  imports: [
+    NavbarComponent,
+    RouterOutlet
+  ],
   templateUrl: './admin-layout.component.html',
   styleUrl: './admin-layout.component.css'
 })
