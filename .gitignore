@@ -16,6 +16,18 @@ venv/
 *.pyc
 __pycache__/
 
+# Node
+/node_modules
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
 # Ignore logs
 *.log
 
