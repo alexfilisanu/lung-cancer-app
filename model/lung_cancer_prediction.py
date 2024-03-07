@@ -4,7 +4,7 @@ from keras.preprocessing import image
 
 # Load the saved model
 loaded_model = tf.keras.models.load_model("Lung_Model.keras")
-case_labels = ['Diseased', 'Normal']
+case_labels = ['benign', 'malignant', 'normal']
 
 
 # Function to preprocess the image
@@ -25,7 +25,6 @@ def predict_image_class(image_path):
 
 
 # Example usage:
-image_path = '../dataset/images/diseased/diseased-CT-675.jpg'
-# image_path = '../dataset/images/normal/normal-CT-675.jpg'
+image_path = '../dataset/lung-cancer-dataset/malignant/malignant-CT-187.jpg'
 predicted_class = predict_image_class(image_path)
 print("Predicted Class:", predicted_class)

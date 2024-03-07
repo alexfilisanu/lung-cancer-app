@@ -13,12 +13,13 @@ from utils.plotting_utils import plot_accuracy, plot_loss, plot_confusion_matrix
 
 # Define directory paths for the 2 cases
 case_paths = [
-    r'../dataset/images/diseased',
-    r'../dataset/images/normal'
+    r'../dataset/lung-cancer-dataset/benign',
+    r'../dataset/lung-cancer-dataset/malignant',
+    r'../dataset/lung-cancer-dataset/normal'
 ]
 
 # Define labels for the 2 cases
-case_labels = ['Diseased', 'Normal']
+case_labels = ['benign', 'malignant', 'normal']
 # Initialize lists to store file paths and labels
 paths = []
 labels = []
@@ -47,14 +48,14 @@ train_gen = image_gen.flow_from_dataframe(dataframe=pd.DataFrame({'paths': train
                                           target_size=(244, 244),
                                           color_mode='rgb',
                                           class_mode="categorical",
-                                          batch_size=5,
+                                          batch_size=16,
                                           shuffle=True)
 test_gen = image_gen.flow_from_dataframe(dataframe=pd.DataFrame({'paths': test_images, 'labels': test_labels}),
                                          x_col="paths", y_col="labels",
                                          target_size=(244, 244),
                                          color_mode='rgb',
                                          class_mode="categorical",
-                                         batch_size=5,
+                                         batch_size=16,
                                          shuffle=False)
 
 # Plotting a batch with labels
@@ -97,7 +98,7 @@ model = keras.models.Sequential([
     keras.layers.Dropout(0.5),
     keras.layers.Dense(1024, activation='relu'),
     keras.layers.Dropout(0.5),
-    keras.layers.Dense(2, activation='softmax')
+    keras.layers.Dense(3, activation='softmax')
 ])
 
 model.compile(
@@ -110,7 +111,7 @@ model.summary()
 plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 
 # Train the model
-history = model.fit(train_gen, epochs=8, validation_data=test_gen, verbose=1)
+history = model.fit(train_gen, epochs=10, validation_data=test_gen, verbose=1)
 
 # Plot accuracy and loss
 plot_accuracy(history)

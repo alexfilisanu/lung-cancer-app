@@ -39,12 +39,12 @@ def plot_image_batch(generator):
     label_map = {v: k for k, v in generator.class_indices.items()}  # Get mapping from numerical labels to string labels
     images, labels = next(generator)  # Get images and labels for one batch
     batch_size = len(images)
-    num_rows = (batch_size + 4) // 5  # Calculate number of rows needed for 5 images per row
+    num_rows = (batch_size + 3) // 4  # Calculate number of rows needed for 5 images per row
     plt.figure(figsize=(20, 4 * num_rows))  # Adjust figure size
     for i in range(batch_size):
         img = images[i]  # Get the image from the batch
         img = (img - img.min()) / (img.max() - img.min())  # Normalize pixel values
-        plt.subplot(num_rows, 5, i + 1)  # Adjust subplot layout
+        plt.subplot(num_rows, 4, i + 1)  # Adjust subplot layout
         plt.imshow(img)
         plt.title(label_map[labels[i].argmax()])  # Use label encoder to get the string label
         plt.axis('off')

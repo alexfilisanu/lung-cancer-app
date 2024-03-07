@@ -1,0 +1,119 @@
+/usr/bin/python3 /Users/alexfilisanu/Downloads/lung-cancer-app/model/lung_cancer_classification.py
+labels
+normal       4577
+malignant    4488
+benign       3120
+Name: count, dtype: int64
+/Library/Python/3.9/site-packages/keras/src/preprocessing/image.py:1137: UserWarning: Found 1 invalid image filename(s) in x_col="paths". These filename(s) will be ignored.
+  warnings.warn(
+Found 9747 validated image filenames belonging to 3 classes.
+Found 2437 validated image filenames belonging to 3 classes.
+2024-03-07 01:01:21.290251: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M3 Pro
+2024-03-07 01:01:21.290274: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 18.00 GB
+2024-03-07 01:01:21.290279: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 6.00 GB
+2024-03-07 01:01:21.290325: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:306] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+2024-03-07 01:01:21.290355: I tensorflow/core/common_runtime/pluggable_device/pluggable_device_factory.cc:272] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 73, 73, 128)       24704
+
+ batch_normalization (Batch  (None, 73, 73, 128)       512
+ Normalization)
+
+ conv2d_1 (Conv2D)           (None, 73, 73, 256)       819456
+
+ batch_normalization_1 (Bat  (None, 73, 73, 256)       1024
+ chNormalization)
+
+ max_pooling2d (MaxPooling2  (None, 24, 24, 256)       0
+ D)
+
+ conv2d_2 (Conv2D)           (None, 24, 24, 256)       590080
+
+ batch_normalization_2 (Bat  (None, 24, 24, 256)       1024
+ chNormalization)
+
+ conv2d_3 (Conv2D)           (None, 24, 24, 256)       65792
+
+ batch_normalization_3 (Bat  (None, 24, 24, 256)       1024
+ chNormalization)
+
+ conv2d_4 (Conv2D)           (None, 24, 24, 256)       65792
+
+ batch_normalization_4 (Bat  (None, 24, 24, 256)       1024
+ chNormalization)
+
+ conv2d_5 (Conv2D)           (None, 24, 24, 512)       1180160
+
+ batch_normalization_5 (Bat  (None, 24, 24, 512)       2048
+ chNormalization)
+
+ max_pooling2d_1 (MaxPoolin  (None, 12, 12, 512)       0
+ g2D)
+
+ conv2d_6 (Conv2D)           (None, 12, 12, 512)       2359808
+
+ batch_normalization_6 (Bat  (None, 12, 12, 512)       2048
+ chNormalization)
+
+ conv2d_7 (Conv2D)           (None, 12, 12, 512)       2359808
+
+ batch_normalization_7 (Bat  (None, 12, 12, 512)       2048
+ chNormalization)
+
+ max_pooling2d_2 (MaxPoolin  (None, 6, 6, 512)         0
+ g2D)
+
+ conv2d_8 (Conv2D)           (None, 6, 6, 512)         2359808
+
+ batch_normalization_8 (Bat  (None, 6, 6, 512)         2048
+ chNormalization)
+
+ max_pooling2d_3 (MaxPoolin  (None, 3, 3, 512)         0
+ g2D)
+
+ flatten (Flatten)           (None, 4608)              0
+
+ dense (Dense)               (None, 1024)              4719616
+
+ dropout (Dropout)           (None, 1024)              0
+
+ dense_1 (Dense)             (None, 1024)              1049600
+
+ dropout_1 (Dropout)         (None, 1024)              0
+
+ dense_2 (Dense)             (None, 3)                 3075
+
+=================================================================
+Total params: 15610499 (59.55 MB)
+Trainable params: 15604099 (59.52 MB)
+Non-trainable params: 6400 (25.00 KB)
+_________________________________________________________________
+Epoch 1/10
+2024-03-07 01:01:23.092519: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:117] Plugin optimizer for device_type GPU is enabled.
+610/610 [==============================] - 120s 189ms/step - loss: 1.7114 - accuracy: 0.6267 - val_loss: 1.1191 - val_accuracy: 0.6684
+Epoch 2/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.6698 - accuracy: 0.7950 - val_loss: 0.5022 - val_accuracy: 0.8215
+Epoch 3/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.3843 - accuracy: 0.8777 - val_loss: 0.3016 - val_accuracy: 0.8995
+Epoch 4/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.2422 - accuracy: 0.9211 - val_loss: 0.1713 - val_accuracy: 0.9331
+Epoch 5/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.1296 - accuracy: 0.9550 - val_loss: 0.1517 - val_accuracy: 0.9499
+Epoch 6/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.0961 - accuracy: 0.9679 - val_loss: 0.0774 - val_accuracy: 0.9717
+Epoch 7/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.0586 - accuracy: 0.9796 - val_loss: 0.1517 - val_accuracy: 0.9417
+Epoch 8/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.0360 - accuracy: 0.9872 - val_loss: 0.0476 - val_accuracy: 0.9824
+Epoch 9/10
+610/610 [==============================] - 113s 185ms/step - loss: 0.0323 - accuracy: 0.9880 - val_loss: 0.0531 - val_accuracy: 0.9799
+Epoch 10/10
+610/610 [==============================] - 3509s 6s/step - loss: 0.0309 - accuracy: 0.9897 - val_loss: 0.0810 - val_accuracy: 0.9733
+153/153 [==============================] - 2075s 14s/step - loss: 0.0810 - accuracy: 0.9733
+Accuracy of the Model: 97.3%
+153/153 [==============================] - 729s 5s/step
+
+Process finished with exit code 0
