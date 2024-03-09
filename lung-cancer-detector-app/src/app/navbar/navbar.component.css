@@ -38,12 +38,12 @@
   margin-right: 0;
 }
 
-.navbar-item .nav-link {
+.navbar-item a {
   color: #ffffff;
   font-size: 1.3em;
   text-decoration: none;
 }
 
-.navbar-item .nav-link:hover {
+.navbar-item a:hover {
   color: #fae038;
 }
