@@ -15,7 +15,8 @@
   font-size: 2em;
 }
 
-.footer-social-media a:hover {
+.footer-social-media a:hover,
+.footer-link a:hover {
   color: #fae038;
 }
 
@@ -29,10 +30,6 @@
 .footer-link a {
   color: #ffffff;
   text-decoration: none;
-}
-
-.footer-link a:hover {
-  color: #fae038;
 }
 
 .footer-copyright {

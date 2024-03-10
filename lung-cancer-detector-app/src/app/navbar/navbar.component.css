@@ -18,7 +18,8 @@
   text-decoration: none;
 }
 
-.navbar-main-item a:hover {
+.navbar-main-item a:hover,
+.navbar-item a:hover {
   color: #fae038;
 }
 
@@ -42,8 +43,4 @@
   color: #ffffff;
   font-size: 1.3em;
   text-decoration: none;
-}
-
-.navbar-item a:hover {
-  color: #fae038;
 }
