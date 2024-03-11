@@ -1,0 +1,50 @@
+.drag-drop-container {
+  text-align: center;
+  align-items: center;
+  width: 30%;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: #eeeeee;
+  border: dotted 2px #aaaaaa;
+}
+
+.image-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.submit-btn {
+  background-color: #3cb696;
+  color: #ffffff;
+  border: none;
+  font-size: 20px;
+  padding: 12px 60px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  border: 2px solid #3cb696;
+  color: #3cb696;
+}
+
+.submit-btn:focus {
+  outline: none;
+}

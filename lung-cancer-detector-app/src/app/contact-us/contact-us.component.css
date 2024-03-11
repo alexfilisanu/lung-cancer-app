@@ -25,7 +25,7 @@
 .col-lg-5 input,
 .col-lg-10 input,
 .col-lg-10 textarea {
-  background-color: #dcdcdc;
+  background-color: #eeeeee;
   border: none;
   font-size: 18px;
   padding: 8px 12px;
@@ -45,11 +45,11 @@
 .col-lg-5 input:focus,
 .col-lg-10 input:focus,
 .col-lg-10 textarea:focus,
-.submit-form-btn:focus {
+.submit-btn:focus {
   outline: none;
 }
 
-.submit-form-btn {
+.submit-btn {
   background-color: #3cb696;
   color: #ffffff;
   border: none;
@@ -59,7 +59,7 @@
   cursor: pointer;
 }
 
-.submit-form-btn:hover {
+.submit-btn:hover {
   background-color: transparent;
   border: 2px solid #3cb696;
   color: #3cb696;

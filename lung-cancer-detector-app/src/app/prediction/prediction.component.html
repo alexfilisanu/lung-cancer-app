@@ -1,0 +1,21 @@
+<head>
+  <title> Prediction </title>
+  <link href="../../assets/css/all.min.css" rel="stylesheet" />
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="drag-drop-container">
+    <div *ngIf="!files.length" class="dropzone" appDrag (files)="filesDropped($event)">
+      <h4> Drop your file here! </h4>
+    </div>
+
+    <div *ngFor="let file of files">
+      <img *ngIf="file" [src]="file.url" class="image-zone" alt="">
+    </div>
+
+    <button class="submit-btn" (click)="upload()">
+      Upload Image
+    </button>
+  </div>
+</body>
