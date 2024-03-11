@@ -19,13 +19,13 @@ export class DashboardComponent {
 
   constructor() {}
 
-  changeSlide(index: number): void {
+  public changeSlide(index: number): void {
     this.currentSlideIndex = index;
     clearInterval(this.slideInterval);
     this.resetSlideInterval();
   }
 
-  resetSlideInterval(): void {
+  public resetSlideInterval(): void {
     this.slideInterval = setInterval((): void => {
     this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
   }, 10000);
@@ -33,5 +33,9 @@ export class DashboardComponent {
 
   ngOnInit(): void {
     this.resetSlideInterval();
+
+    setInterval(() => {
+      this.resetSlideInterval();
+    }, 100000);
   }
 }

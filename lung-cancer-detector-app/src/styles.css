@@ -5,3 +5,17 @@ html, body {
 body {
   min-height: 77vh;
 }
+
+.submit-btn {
+  background-color: #3cb696;
+  color: #ffffff;
+  border: none;
+  padding: 12px 60px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  border: 2px solid #3cb696;
+  color: #3cb696;
+}

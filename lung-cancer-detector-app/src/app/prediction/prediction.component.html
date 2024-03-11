@@ -6,12 +6,16 @@
 
 <body>
   <div class="drag-drop-container">
-    <div *ngIf="!files.length" class="dropzone" appDrag (files)="filesDropped($event)">
+    <div *ngIf="!file" class="dropzone" appDrag (files)="filesDropped($event)">
       <h4> Drop your file here! </h4>
     </div>
 
-    <div *ngFor="let file of files">
-      <img *ngIf="file" [src]="file.url" class="image-zone" alt="">
+    <div *ngIf="file">
+      <div class="image-container">
+        <i class="fa-solid fa-circle-xmark close-btn" (click)="removeFile()"></i>
+        <img [src]="file.url" class="image-zone" alt="">
+        <div>{{ prediction }}</div>
+      </div>
     </div>
 
     <button class="submit-btn" (click)="upload()">

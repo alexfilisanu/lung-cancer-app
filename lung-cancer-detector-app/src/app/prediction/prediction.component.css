@@ -18,10 +18,13 @@
   border: dotted 2px #aaaaaa;
 }
 
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
 .image-zone {
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 200px;
   width: 200px;
   margin-left: auto;
@@ -29,20 +32,23 @@
   margin-bottom: 40px;
 }
 
-.submit-btn {
-  background-color: #3cb696;
-  color: #ffffff;
+.close-btn {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  color: #aaaaaa;
   border: none;
-  font-size: 20px;
-  padding: 12px 60px;
-  border-radius: 5px;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.submit-btn:hover {
-  background-color: transparent;
-  border: 2px solid #3cb696;
-  color: #3cb696;
+.close-btn:hover {
+  color: #ff0000;
+}
+
+.submit-btn {
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .submit-btn:focus {
