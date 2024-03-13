@@ -6,20 +6,29 @@
 
 <body>
   <div class="drag-drop-container">
-    <div *ngIf="!file" class="dropzone" appDrag (files)="filesDropped($event)">
-      <h4> Drop your file here! </h4>
+    <div *ngIf="!file" class="dropzone" appDrag (files)="onFilesDropped($event)">
+      <div>
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <h4> Drop your file here </h4>
+        <h6> or </h6>
+        <input type="file" id="file-img" (change)="onFileSelected($event)" accept="image/*" style="display:none;"/>
+        <label for="file-img" class="select-btn"> Select a file </label>
+      </div>
     </div>
 
     <div *ngIf="file">
       <div class="image-container">
-        <i class="fa-solid fa-circle-xmark close-btn" (click)="removeFile()"></i>
+        <i *ngIf="showUploadButton" class="fa-solid fa-circle-xmark close-btn" (click)="removeFile()"></i>
         <img [src]="file.url" class="image-zone" alt="">
-        <div>{{ prediction }}</div>
       </div>
     </div>
 
-    <button class="submit-btn" (click)="upload()">
+    <button *ngIf="showUploadButton" class="submit-btn" (click)="upload()">
       Upload Image
     </button>
+
+    <div *ngIf="!showUploadButton && prediction !== ''" class="prediction-result">
+      The result of the prediction is <br> {{ prediction }}
+    </div>
   </div>
 </body>

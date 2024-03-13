@@ -19,6 +19,17 @@ export class DashboardComponent {
 
   constructor() {}
 
+  ngOnInit(): void {
+    this.resetSlideInterval();
+    setTimeout(() => this.resetSlideInterval(), 100000);
+  }
+
+  ngOnDestroy(): void {
+    if (this.slideInterval) {
+      clearInterval(this.slideInterval);
+    }
+  }
+
   public changeSlide(index: number): void {
     this.currentSlideIndex = index;
     clearInterval(this.slideInterval);
@@ -27,15 +38,7 @@ export class DashboardComponent {
 
   public resetSlideInterval(): void {
     this.slideInterval = setInterval((): void => {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
-  }, 10000);
-}
-
-  ngOnInit(): void {
-    this.resetSlideInterval();
-
-    setInterval(() => {
-      this.resetSlideInterval();
-    }, 100000);
+      this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
+    }, 10000);
   }
 }
