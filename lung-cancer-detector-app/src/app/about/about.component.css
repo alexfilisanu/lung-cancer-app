@@ -3,6 +3,16 @@
   align-items: center;
   width: 80%;
   padding-top: 80px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.about-container .col-md-6 img {
+  height: 1000px;
+  width: 700px;
+}
+
+.about-container .col-md-6 p {
+  padding-left: 20px;
 }

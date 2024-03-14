@@ -1,0 +1,23 @@
+.go-home-btn {
+  font-size: 30px;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 800;
+  background-color: #178066;
+  color: #000000;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 35px;
+  cursor: pointer;
+  position: fixed;
+  top: 55%;
+  right: 350px;
+  transform: translateY(-50%);
+  text-decoration: none;
+}
+
+.go-home-btn:hover {
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #178066;
+  text-decoration: none;
+}
