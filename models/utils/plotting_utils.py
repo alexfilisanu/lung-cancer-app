@@ -3,27 +3,31 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 
-def plot_accuracy(history):
+def plot_accuracy(history, save_path=None):
     plt.plot(history.history['accuracy'])
     plt.plot(history.history['val_accuracy'])
     plt.title('Model accuracy')
     plt.ylabel('Accuracy')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Validation'], loc='upper left')
+    if save_path:
+        plt.savefig(save_path + '/accuracy_plot.png')
     plt.show()
 
 
-def plot_loss(history):
+def plot_loss(history, save_path=None):
     plt.plot(history.history['loss'])
     plt.plot(history.history['val_loss'])
     plt.title('Model loss')
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Validation'], loc='upper left')
+    if save_path:
+        plt.savefig(save_path + '/loss_plot.png')
     plt.show()
 
 
-def plot_confusion_matrix(cm, case_labels):
+def plot_confusion_matrix(cm, case_labels, save_path=None):
     plt.figure(figsize=(8, 8))
     sns.heatmap(cm, annot=True, fmt='g', cmap='Blues', cbar=False)
     num_labels = len(case_labels)
@@ -32,10 +36,12 @@ def plot_confusion_matrix(cm, case_labels):
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
     plt.title('Confusion Matrix')
+    if save_path:
+        plt.savefig(save_path + '/confusion_matrix.png')
     plt.show()
 
 
-def plot_image_batch(generator):
+def plot_image_batch(generator, save_path=None):
     label_map = {v: k for k, v in generator.class_indices.items()}  # Get mapping from numerical labels to string labels
     images, labels = next(generator)  # Get images and labels for one batch
     batch_size = len(images)
@@ -49,4 +55,6 @@ def plot_image_batch(generator):
         plt.title(label_map[labels[i].argmax()])  # Use label encoder to get the string label
         plt.axis('off')
     plt.tight_layout()  # Adjust layout to prevent overlap
+    if save_path:
+        plt.savefig(save_path + '/image_batch.png')
     plt.show()

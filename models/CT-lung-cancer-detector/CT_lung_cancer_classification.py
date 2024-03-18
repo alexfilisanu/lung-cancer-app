@@ -8,17 +8,16 @@ from keras.utils import plot_model
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 from tensorflow import keras
+from models.utils.plotting_utils import plot_confusion_matrix, plot_loss, plot_accuracy, plot_image_batch
 
-from utils.plotting_utils import plot_accuracy, plot_loss, plot_confusion_matrix, plot_image_batch
-
-# Define directory paths for the 2 cases
+# Define directory paths for the 3 cases
 case_paths = [
-    r'../dataset/lung-cancer-dataset/benign',
-    r'../dataset/lung-cancer-dataset/malignant',
-    r'../dataset/lung-cancer-dataset/normal'
+    r'../../dataset/CT-lung-cancer/benign',
+    r'../../dataset/CT-lung-cancer/malignant',
+    r'../../dataset/CT-lung-cancer/normal'
 ]
 
-# Define labels for the 2 cases
+# Define labels for the 3 cases
 case_labels = ['benign', 'malignant', 'normal']
 # Initialize lists to store file paths and labels
 paths = []
@@ -59,7 +58,7 @@ test_gen = image_gen.flow_from_dataframe(dataframe=pd.DataFrame({'paths': test_i
                                          shuffle=False)
 
 # Plotting a batch with labels
-plot_image_batch(train_gen)
+plot_image_batch(train_gen, save_path="plots")
 
 model = keras.models.Sequential([
     keras.layers.Conv2D(filters=128, kernel_size=(8, 8), strides=(3, 3), activation='relu', input_shape=(224, 224, 3)),
@@ -108,18 +107,18 @@ model.compile(
 )
 
 model.summary()
-plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
+plot_model(model, to_file='plots/model_plot.png', show_shapes=True, show_layer_names=True)
 
-# Train the model
+# Train the models
 history = model.fit(train_gen, epochs=10, validation_data=test_gen, verbose=1)
 
 # Plot accuracy and loss
-plot_accuracy(history)
-plot_loss(history)
+plot_accuracy(history, save_path="plots")
+plot_loss(history, save_path="plots")
 
-model.save("Lung_Model.keras")
+model.save("CT_lung_cancer_model.keras")
 
-# Evaluate the model
+# Evaluate the models
 test_loss, test_accuracy = model.evaluate(test_gen, verbose=1)
 print("Accuracy of the Model:", "{:.1f}%".format(test_accuracy * 100))
 
@@ -129,4 +128,4 @@ test_pred_labels = np.argmax(test_predictions, axis=1)
 cm = confusion_matrix(test_gen.classes, test_pred_labels)
 
 # Plot Confusion Matrix
-plot_confusion_matrix(cm, case_labels)
+plot_confusion_matrix(cm, case_labels, save_path="plots")

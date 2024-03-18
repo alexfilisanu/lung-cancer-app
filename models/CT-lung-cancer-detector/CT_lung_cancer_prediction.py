@@ -2,8 +2,8 @@ import numpy as np
 import tensorflow as tf
 from keras.preprocessing import image
 
-# Load the saved model
-loaded_model = tf.keras.models.load_model("Lung_Model.keras")
+# Load the saved models
+loaded_model = tf.keras.models.load_model("CT_lung_cancer_model.keras")
 case_labels = ['benign', 'malignant', 'normal']
 
 
@@ -25,6 +25,6 @@ def predict_image_class(image_path):
 
 
 # Example usage:
-image_path = '../dataset/lung-cancer-dataset/malignant/malignant-CT-187.jpg'
+image_path = '../../dataset/CT-lung-cancer/malignant/malignant-CT-187.jpg'
 predicted_class = predict_image_class(image_path)
 print("Predicted Class:", predicted_class)
