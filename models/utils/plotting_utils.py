@@ -58,3 +58,29 @@ def plot_image_batch(generator, save_path=None):
     if save_path:
         plt.savefig(save_path + '/image_batch.png')
     plt.show()
+
+
+def plot_age_distribution_by_gender(data, save_path=None):
+    female_age = data[data['GENDER'] == 'F']['AGE']
+    male_age = data[data['GENDER'] == 'M']['AGE']
+    plt.hist([female_age, male_age], bins=18, label=['Female', 'Male'])
+    plt.xlabel('Age')
+    plt.ylabel('Frequency')
+    plt.legend()
+    plt.title('Age Distribution by Gender')
+    if save_path:
+        plt.savefig(save_path + '/age_distribution_by_gender.png')
+    plt.show()
+
+
+def plot_lung_cancer_prevalence_by_gender(data, save_path=None):
+    gender_lung_cancer_counts = data.groupby(['GENDER', 'LUNG_CANCER']).size().unstack(fill_value=0)
+    ax = gender_lung_cancer_counts.plot(kind='bar', stacked=True, rot=0)
+    plt.xlabel('Gender')
+    plt.ylabel('Number of Cases')
+    plt.legend(title='Lung Cancer', loc='upper right')
+    ax.set_xticklabels(['Female', 'Male'], rotation=0)
+    plt.title('Lung Cancer Prevalence by Gender')
+    if save_path:
+        plt.savefig(save_path + '/lung_cancer_prevalence_by_gender.png')
+    plt.show()
