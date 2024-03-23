@@ -1,48 +1,54 @@
+import joblib
 import pandas as pd
-import tensorflow as tf
+from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 from sklearn.preprocessing import StandardScaler
 
-# Load the saved model
-loaded_model = tf.keras.models.load_model("survey_lung_cancer_model.keras")
+app = Flask(__name__)
+CORS(app, origins=['http://127.0.0.1:4200'])
 
-# Prepare the test data
-test_data = {
-    'GENDER': ['M'],
-    'AGE': [69],
-    'SMOKING': ['NO'],
-    'YELLOW_FINGERS': ['YES'],
-    'ANXIETY': ['YES'],
-    'PEER_PRESSURE': ['NO'],
-    'CHRONIC_DISEASE': ['NO'],
-    'FATIGUE': ['YES'],
-    'ALLERGY': ['NO'],
-    'WHEEZING': ['YES'],
-    'ALCOHOL_CONSUMING': ['YES'],
-    'COUGHING': ['YES'],
-    'SHORTNESS_OF_BREATH': ['YES'],
-    'SWALLOWING_DIFFICULTY': ['YES'],
-    'CHEST_PAIN': ['YES']
-}
 
-# Create a DataFrame from the test data
-test_df = pd.DataFrame(test_data)
+def predict_lung_cancer(data):
+    model = joblib.load("survey_lung_cancer_model.pkl")
+    df = pd.DataFrame(data)
+    scaler = StandardScaler()
+    df['AGE'] = scaler.fit_transform(df[['AGE']])
 
-# Preprocess the test data similar to how you preprocessed your training data
-scaler = StandardScaler()
+    predictions = model.predict(df)
+    prediction_result = (predictions > 0.5).astype(int)
 
-# Map binary categorical variables directly to 0 and 1
-test_df['GENDER'] = test_df['GENDER'].map({'M': 0, 'F': 1})
+    return prediction_result
 
-# Scale numerical variables
-test_df['AGE'] = scaler.fit_transform(test_df[['AGE']])
 
-# Custom mapping for columns_to_transform
-columns_to_transform = [col for col in test_df.columns if col not in ['AGE', 'GENDER']]
-for col in columns_to_transform:
-    test_df[col] = test_df[col].map({'YES': 1, 'NO': 0})
+def preprocess_data(data):
+    return {
+        'GENDER': [data['gender']],
+        'AGE': [float(data['age'])],
+        'SMOKING': [data['yellowFingers']],
+        'YELLOW_FINGERS': [data['yellowFingers']],
+        'ANXIETY': [data['anxiety']],
+        'PEER_PRESSURE': [data['peerPressure']],
+        'CHRONIC_DISEASE': [data['chronicDisease']],
+        'FATIGUE': [data['fatigue']],
+        'ALLERGY': [data['allergy']],
+        'WHEEZING': [data['wheezing']],
+        'ALCOHOL_CONSUMING': [data['alcoholConsumption']],
+        'COUGHING': [data['coughing']],
+        'SHORTNESS_OF_BREATH': [data['shortnessOfBreath']],
+        'SWALLOWING_DIFFICULTY': [data['swallowingDifficulty']],
+        'CHEST_PAIN': [data['chestPain']]
+    }
 
-# Predict on the preprocessed test data
-case_labels = ['No Lung Cancer', 'Lung Cancer']
-predictions = loaded_model.predict(test_df)
-test_pred_labels = (predictions > 0.5).astype(int)
-print(case_labels[test_pred_labels[0][0]])
+
+@app.route('/predict', methods=['POST'])
+@cross_origin()
+def predict():
+    data = preprocess_data(request.json)
+    predictions = predict_lung_cancer(data)
+    case_labels = ['No Lung Cancer', 'Lung Cancer']
+    prediction_label = case_labels[predictions[0]]
+    return jsonify({'prediction': prediction_label})
+
+
+if __name__ == '__main__':
+    app.run(debug=True, port=3100)

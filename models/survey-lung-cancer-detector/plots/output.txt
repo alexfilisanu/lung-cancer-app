@@ -103,3 +103,10 @@ Accuracy of the Model: 95.4%
 4/4 [==============================] - 0s 2ms/step
 [[48  3]
  [ 2 55]]
+
+
+ ///
+ /usr/bin/python3 /Users/alexfilisanu/Downloads/lung-cancer-detector/models/survey-lung-cancer-detector/survey_lung_cancer_classification.py
+Accuracy of the Model: 95.4%
+
+Process finished with exit code 0

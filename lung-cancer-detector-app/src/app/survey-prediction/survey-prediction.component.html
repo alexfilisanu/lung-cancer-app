@@ -1,0 +1,287 @@
+<head>
+  <title> Survey Prediction </title>
+
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../assets/css/all.min.css" />
+</head>
+
+<body>
+  <div class="survey-container">
+    <div class="survey-header">
+      Health Survey
+    </div>
+
+    <form [formGroup]="surveyForm" class="survey-form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 1. </span>
+              <label> Gender </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('gender').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="gender" [value]="1" />
+                <label> Male </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="gender" [value]="0" />
+                <label> Female </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 2. </span>
+              <label>Age</label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('age').invalid">
+              <div class="col-md-12">
+                <input type="text" formControlName="age" />
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 3. </span>
+              <label> Do you smoke? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('smoking').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="smoking" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="smoking" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 3. </span>
+              <label> Do you have yellow fingers? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('yellowFingers').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="yellowFingers" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="yellowFingers" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 4. </span>
+              <label> Do you experience anxiety? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('anxiety').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="anxiety" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="anxiety" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 5. </span>
+              <label> Do you experience peer pressure? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('peerPressure').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="peerPressure" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="peerPressure" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 6. </span>
+              <label> Do you have a chronic disease? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('chronicDisease').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="chronicDisease" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="chronicDisease" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 7. </span>
+              <label>Do you experience fatigue? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('fatigue').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="fatigue" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="fatigue" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 8. </span>
+              <label>Do you have any allergies? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('allergy').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="allergy" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="allergy" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 9. </span>
+              <label>Do you experience wheezing? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('wheezing').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="wheezing" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="wheezing" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 10. </span>
+              <label>Do you consume alcohol? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('alcoholConsumption').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="alcoholConsumption" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="alcoholConsumption" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 11. </span>
+              <label>Do you experience coughing? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('coughing').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="coughing" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="coughing" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 12. </span>
+              <label>Do you experience shortness of breath? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('shortnessOfBreath').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="shortnessOfBreath" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="shortnessOfBreath" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 13. </span>
+              <label>Do you experience swallowing difficulty? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('swallowingDifficulty').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="swallowingDifficulty" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="swallowingDifficulty" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 14. </span>
+              <label>Do you experience chest pain? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('chestPain').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="chestPain" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="chestPain" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+          <div class="survey-input">
+            <h4>
+              <span class="survey-number"> 16. </span>
+              <label> Do you want results on email? </label>
+            </h4>
+            <div class="form-row" [class.invalid-field]="isFormSubmitted && surveyForm.get('email').invalid">
+              <div class="col-md-6">
+                <input type="radio" formControlName="email" [value]="1" />
+                <label> Yes </label>
+              </div>
+              <div class="col-md-6">
+                <input type="radio" formControlName="email" [value]="0" />
+                <label> No </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="submit-btn">
+        Submit
+      </button>
+      <div class="messages-container">
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+        <div class="prediction-message">
+          {{ prediction }}
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

@@ -1,5 +1,5 @@
 html, body {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 .submit-btn {
   background-color: #3cb696;
   color: #ffffff;
-  border: none;
+  border: 2px solid #3cb696;;
   padding: 12px 60px;
   cursor: pointer;
 }

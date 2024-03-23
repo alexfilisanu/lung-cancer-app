@@ -5,19 +5,19 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {DragDropDirective, FileHandle} from './drag-drop.directive';
 
 @Component({
-  selector: 'app-prediction',
+  selector: 'app-CT-prediction',
   standalone: true,
   imports: [
     NgIf,
     DragDropDirective
   ],
-  templateUrl: './prediction.component.html',
-  styleUrl: './prediction.component.css'
+  templateUrl: './CT-prediction.component.html',
+  styleUrl: './CT-prediction.component.css'
 })
-export class PredictionComponent {
+export class CTPredictionComponent {
   public file: FileHandle | null = null;
   public imageUrl: SafeResourceUrl | null = null;
-  public prediction: String = '';
+  public prediction: string = '';
   public showUploadButton: boolean = true;
 
   private model: tf.LayersModel | null = null;
