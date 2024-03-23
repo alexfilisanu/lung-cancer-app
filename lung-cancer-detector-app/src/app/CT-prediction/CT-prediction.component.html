@@ -28,6 +28,10 @@
       Upload Image
     </button>
 
+    <div class="error-message">
+      {{ errorMessage }}
+    </div>
+
     <div *ngIf="!showUploadButton && prediction !== ''" class="prediction-result">
       The result of the prediction is <br> {{ prediction }}
     </div>

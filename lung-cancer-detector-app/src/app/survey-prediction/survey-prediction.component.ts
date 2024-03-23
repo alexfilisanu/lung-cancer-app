@@ -50,8 +50,11 @@ export class SurveyPredictionComponent {
     if (this.surveyForm?.valid) {
       const formData = this.surveyForm.value;
       this.errorMessage = '';
-      this.http.post<any>('http://127.0.0.1:3100/predict', formData)
-        .subscribe(response => { this.prediction = response.prediction; });
+
+      this.http.post<any>('http://127.0.0.1:3000/survey-predict', formData).subscribe({
+        next: (response) => { this.prediction = response.prediction; },
+        error: (error) => { console.error('Error occurred while predicting the response:', error); }
+      });
     } else {
       this.errorMessage = 'All fields are required. Please fill out the form.';
     }
