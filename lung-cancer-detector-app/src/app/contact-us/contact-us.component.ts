@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import {CommonModule} from "@angular/common";
-import {FormControl, FormGroup, FormsModule, Validators} from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { FormControl, FormGroup, FormsModule, Validators } from "@angular/forms";
+import { NgxTranslateModule } from "../translate/translate.module";
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
   imports: [
     CommonModule,
-    NgbModule,
-    FormsModule
+    FormsModule,
+    NgxTranslateModule
   ],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css'

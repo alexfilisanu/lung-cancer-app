@@ -1,0 +1,107 @@
+{
+  "welcome": {
+    "title": "Welcome to the Lung Cancer Detector"
+  },
+  "about": {
+    "title-about": "About us",
+    "content-about": "We are a team of developers who are passionate about using technology to improve healthcare. We have developed a machine learning model that can detect lung cancer from chest x-rays. Our model is trained on a dataset of 100,000 chest x-rays and has an accuracy of 95%. We hope that our model can help doctors to diagnose lung cancer more quickly and accurately.",
+    "title-mission": "Our Mission",
+    "content-mission": "Our mission is to provide a user-friendly platform that leverages the latest in machine learning technology to predict lung cancer risk with high accuracy. We aim to make early detection accessible to everyone, regardless of their background or location.",
+    "title-help": "How you can help",
+    "content-help": "You can help us by spreading the word about our platform and encouraging people to get screened for lung cancer. Early detection is key to improving survival rates, and we believe that our platform can help save lives.",
+    "title-privacy": "Privacy and Security Policy",
+    "content-privacy": "We take your privacy and security seriously. We do not store any personal information about you, and we do not share your data with any third parties. All data is encrypted and stored securely on our servers. If you have any questions or concerns about our privacy and security policy, please contact us at",
+    "title-involvement": "Get Involved",
+    "content-involvement": "We are always looking for volunteers to help us improve our platform. If you are interested in getting involved, please contact us at"
+  },
+  "contact": {
+    "title": "Contact Us"
+  },
+  "CT-prediction": {
+    "drop-file": "Drop your file here",
+    "or": "or",
+    "select-file": "Select a file",
+    "result": "The result of the prediction is",
+    "normal": "Normal",
+    "benign": "Benign",
+    "malignant": "Malignant",
+    "unknown": "Unknown"
+  },
+  "survey-prediction": {
+    "title": "Lung Cancer Risk Prediction",
+    "yes": "Yes",
+    "no": "No",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "age": "Age",
+    "smoke": "Do you smoke?",
+    "yellow-fingers": "Do you have yellow fingers?",
+    "anxiety": "Do you experience anxiety?",
+    "peer-pressure": "Do you experience peer pressure?",
+    "chronic-disease": "Do you have a chronic disease?",
+    "fatigue": "Do you experience fatigue?",
+    "allergy": "Do you have allergies?",
+    "wheezing": "Do you experience wheezing?",
+    "alcohol": "Do you consume alcohol?",
+    "coughing": "Do you experience coughing?",
+    "shortness-of-breath": "Do you experience shortness of breath?",
+    "swallowing-difficulty": "Do you experience difficulty swallowing?",
+    "chest-pain": "Do you experience chest pain?",
+    "email-result": "Do you want to receive the result by email?",
+    "cancer": "High risk of lung cancer",
+    "no-cancer": "Low risk of lung cancer",
+    "unknown": "Unknown risk of lung cancer"
+  },
+  "dashboard": {
+    "slide-1": "Early detection of lung cancer is key to improving survival rates. With the help of our platform, you can check your risk of lung cancer in just a few seconds.",
+    "slide-2": "Our platform uses a machine learning model trained on a dataset of 100,000 chest x-rays. Our model has an accuracy of 95% and can detect lung cancer with high precision.",
+    "slide-3": "To check your risk of lung cancer, upload an image of a chest x-ray and wait for the result. The result will be displayed in a few seconds and will indicate whether there is a risk of lung cancer.",
+    "reviews": "Reviews",
+    "review-1": {
+      "image": "../../assets/images/client.jpg",
+      "name": "John Doe",
+      "comment": "The platform is easy to use and provides precise results. I highly recommend this platform to anyone looking to check their risk of lung cancer."
+    },
+    "review-2": {
+      "image": "../../assets/images/client.jpg",
+      "name": "Jane Doe",
+      "comment": "I used the platform to check my risk of lung cancer and was impressed by the accuracy of the results. The platform is user-friendly and provides quick results."
+    },
+    "review-3": {
+      "image": "../../assets/images/client.jpg",
+      "name": "Alice Doe",
+      "comment": "The platform is very useful for those who want to check their risk of lung cancer. I highly recommend this platform to anyone looking to monitor their health."
+    },
+    "services-title": "Our Services",
+    "services-content": "We offer a range of services to help you monitor your risk of lung cancer. Our platform uses the latest in machine learning technology to provide accurate and reliable results. We are committed to providing a user-friendly experience that is accessible to everyone.",
+    "CT-interpreter": "CT Interpreter",
+    "virtual-consultaion": "Virtual Consultation",
+    "lungs-health": "Lungs Health",
+    "contact-specialist": "Contact Specialist",
+    "about-us-title": "About Us",
+    "about-us-content": "We are a team of developers who are passionate about using technology to improve healthcare. We have developed a machine learning model that can detect lung cancer from chest x-rays. Our model is trained on a dataset of 100,000 chest x-rays and has an accuracy of 95%. We hope that our model can help doctors to diagnose lung cancer more quickly and accurately."
+  },
+  "button": {
+    "start": "Get Started",
+    "submit": "Submit",
+    "home": "Home",
+    "read-more": "Read More",
+    "upload-CT": "Upload CT",
+    "consultation": "Consultation",
+    "about": "About Us",
+    "advices": "Advices",
+    "contact": "Contact Us"
+  },
+  "placeholder": {
+    "name": "Your Name",
+    "phone": "Phone Number",
+    "email": "Email",
+    "message": "Your Message",
+    "age": "Enter your age"
+  },
+  "error": {
+    "no-image-selected": "No image selected. Please select an image to upload.",
+    "all-fields-required": "All fields are required. Please fill in all fields."
+  }
+}

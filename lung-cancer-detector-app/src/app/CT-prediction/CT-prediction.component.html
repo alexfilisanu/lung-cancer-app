@@ -1,5 +1,8 @@
+<!DOCTYPE html>
+
 <head>
-  <title> Prediction </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT Prediction</title>
 
   <link rel="stylesheet" href="../../assets/css/all.min.css" />
   <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
@@ -10,30 +13,30 @@
     <div *ngIf="!file" class="dropzone" appDrag (files)="onFilesDropped($event)">
       <div>
         <i class="fa-solid fa-cloud-arrow-up"></i>
-        <h4> Drop your file here </h4>
-        <h6> or </h6>
-        <input type="file" id="file-img" (change)="onFileSelected($event)" accept="image/*" style="display:none;"/>
-        <label for="file-img" class="select-btn"> Select a file </label>
+        <h4>{{ 'CT-prediction.drop-file' | translate }}</h4>
+        <h6>{{ 'CT-prediction.or' | translate }}</h6>
+        <input type="file" id="file-img" (change)="onFileSelected($event)" accept="image/*" style="display:none;" />
+        <label for="file-img" class="select-btn">{{ 'CT-prediction.select-file' | translate }}</label>
       </div>
     </div>
 
     <div *ngIf="file">
       <div class="image-container">
         <i *ngIf="showUploadButton" class="fa-solid fa-circle-xmark close-btn" (click)="removeFile()"></i>
-        <img [src]="file.url" class="image-zone" alt="">
+        <img [src]="file.url" class="image-zone" alt="CT-image">
       </div>
     </div>
 
     <button *ngIf="showUploadButton" class="submit-btn" (click)="upload()">
-      Upload Image
+      {{ 'button.submit' | translate }}
     </button>
 
     <div class="error-message">
-      {{ errorMessage }}
+      {{ errorMessage | translate }}
     </div>
 
     <div *ngIf="!showUploadButton && prediction !== ''" class="prediction-result">
-      The result of the prediction is <br> {{ prediction }}
+      {{ 'CT-prediction.result' | translate }}<br>{{ prediction | translate }}
     </div>
   </div>
 </body>

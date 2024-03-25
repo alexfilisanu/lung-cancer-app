@@ -1,16 +1,12 @@
 .custom-navbar-container {
   background-color: #178066;
-  height: 8vh;
-  display: flex;
   align-items: center;
+  padding: 2vh 0;
 }
 
 .navbar-main-item {
-  flex-basis: 45%;
-  display: flex;
-  justify-content: center;
-  margin-left: 70px;
-  font-size: 2em;
+  text-align: right;
+  font-size: 35px;
 }
 
 .navbar-main-item a {
@@ -29,6 +25,7 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .navbar-item {
@@ -41,6 +38,6 @@
 
 .navbar-item a {
   color: #ffffff;
-  font-size: 1.3em;
+  font-size: 25px;
   text-decoration: none;
 }

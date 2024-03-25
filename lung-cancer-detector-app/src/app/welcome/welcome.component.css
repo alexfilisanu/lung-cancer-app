@@ -1,6 +1,7 @@
 .row {
   padding-top: 200px;
   padding-left: 300px;
+  position: fixed;
 }
 
 .lungs-img {
@@ -21,7 +22,7 @@
   font-weight: 800;
   background-color: #178066;
   color: #000000;
-  border: none;
+  border: 2px solid #178066;
   padding: 20px 40px;
   border-radius: 35px;
   cursor: pointer;
@@ -34,6 +35,5 @@
 .start-btn:hover {
   background-color: transparent;
   color: #000000;
-  border: 2px solid #178066;
   text-decoration: none;
 }

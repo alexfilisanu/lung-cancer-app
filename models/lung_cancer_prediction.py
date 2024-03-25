@@ -18,7 +18,7 @@ survey_model = joblib.load(survey_model_path)
 CT_model_path = os.path.join(script_dir, "CT-lung-cancer-detector", "CT_lung_cancer_model.keras")
 CT_model = tf.keras.models.load_model(CT_model_path)
 
-survey_case_labels = ['No Lung Cancer', 'Lung Cancer']
+survey_case_labels = ['no-cancer', 'cancer']
 CT_case_labels = ['benign', 'malignant', 'normal']
 
 

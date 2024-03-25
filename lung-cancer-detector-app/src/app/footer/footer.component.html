@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+
 <head>
-  <title> Footer </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer</title>
 
   <link rel="stylesheet" href="../../assets/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
 </head>
 
 <footer class="custom-footer-container">
@@ -21,12 +25,10 @@
   </div>
 
   <div class="footer-link">
-    <a href="contact-us">
-      Contact Us
-    </a>
+    <a href="contact-us">{{ 'button.contact' | translate }}</a>
   </div>
 
   <div class="footer-copyright">
-    <p> &copy; {{ currentYear }} LungCancerDetector </p>
+    <p>&copy; {{ currentYear }} LungCancerDetector</p>
   </div>
 </footer>

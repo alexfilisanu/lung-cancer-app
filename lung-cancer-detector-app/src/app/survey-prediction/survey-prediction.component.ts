@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {CommonModule} from "@angular/common";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { Component } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { NgxTranslateModule } from "../translate/translate.module";
 
 @Component({
   selector: 'app-survey-prediction',
@@ -10,7 +11,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxTranslateModule
   ],
   templateUrl: './survey-prediction.component.html',
   styleUrl: './survey-prediction.component.css'
@@ -52,11 +54,21 @@ export class SurveyPredictionComponent {
       this.errorMessage = '';
 
       this.http.post<any>('http://127.0.0.1:3000/survey-predict', formData).subscribe({
-        next: (response) => { this.prediction = response.prediction; },
+        next: (response) => { this.prediction = this.getTranslation(response.prediction); },
         error: (error) => { console.error('Error occurred while predicting the response:', error); }
       });
     } else {
-      this.errorMessage = 'All fields are required. Please fill out the form.';
+      this.errorMessage = 'error.all-fields-required';
+    }
+  }
+
+  private getTranslation(key: string): string {
+    if (key === 'cancer') {
+      return 'survey-prediction.cancer';
+    } else if (key === 'no-cancer') {
+      return 'survey-prediction.no-cancer';
+    } else {
+      return 'survey-prediction.unknown';
     }
   }
 }

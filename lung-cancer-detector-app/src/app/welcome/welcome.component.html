@@ -1,6 +1,7 @@
 <head>
   <title> Welcome </title>
 
+  <link rel="stylesheet" href="../../assets/css/all.min.css">
   <link rel="stylesheet" href="../../assets/css/bootstrap.css">
 </head>
 
@@ -11,10 +12,10 @@
     <img class="lungs-img" src="../../assets/images/welcome-lungs.png" alt="">
   </div>
   <div class="col-md-6 welcome-text">
-    Welcome to the Lung Cancer Detector
+    {{ 'welcome.title' | translate }}
   </div>
 </div>
 
 <a class="start-btn" href="dashboard">
-  Get Started
+  {{ 'button.start' | translate }}
 </a>

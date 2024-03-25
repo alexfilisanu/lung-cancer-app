@@ -1,37 +1,37 @@
 import { Component } from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { CommonModule } from "@angular/common";
+import { NgxTranslateModule } from "../translate/translate.module";
 
 export const Slides = [
-    'Scoala1 Scoala1 Scoala1 Scoala1 Scoala1 Scoala1',
-    'Scoala2 Scoala2 Scoala2 Scoala2 Scoala2 Scoala2',
-    'Scoala3 Scoala3 Scoala3 Scoala3 Scoala3 Scoala3'
-  ]
+  'dashboard.slide-1',
+  'dashboard.slide-2',
+  'dashboard.slide-3',
+]
 
 export const Reviews = [
-    {
-      image: '../../assets/images/client.jpg',
-      name: 'Laviniu Serban',
-      comment: 'Multumesc ca mi ai salvat viata cu aplicatia ta minunata. Nu stiu ce as fi facut fara ea.'
-    },
-    {
-      image: '../../assets/images/client.jpg',
-      name: 'Caius',
-      comment: 'Aplicatia ta este minunata. O sa o recomand tuturor prietenilor mei.'
-    },
-    {
-      image: '../../assets/images/client.jpg',
-      name: 'Nicoleta Popescu',
-      comment: 'Cea mai buna aplicatie pe care am folosit-o vreodata. O sa o folosesc in continuare.'
-    }
-  ];
+  {
+    image: 'dashboard.review-1.image',
+    name: 'dashboard.review-1.name',
+    comment: 'dashboard.review-1.comment'
+  },
+  {
+    image: 'dashboard.review-2.image',
+    name: 'dashboard.review-2.name',
+    comment: 'dashboard.review-2.comment'
+  },
+  {
+    image: 'dashboard.review-3.image',
+    name: 'dashboard.review-3.name',
+    comment: 'dashboard.review-3.comment'
+  }
+];
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     CommonModule,
-    NgbModule
+    NgxTranslateModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'

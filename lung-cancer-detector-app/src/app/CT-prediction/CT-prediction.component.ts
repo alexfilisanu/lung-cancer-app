@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
-import {NgIf} from "@angular/common";
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
-import {DragDropDirective, FileHandle} from './drag-drop.directive';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { CommonModule } from "@angular/common";
+import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { DragDropDirective, FileHandle } from './drag-drop.directive';
+import { NgxTranslateModule } from "../translate/translate.module";
 
 @Component({
   selector: 'app-CT-prediction',
   standalone: true,
   imports: [
-    NgIf,
+    CommonModule,
     DragDropDirective,
-    HttpClientModule
+    HttpClientModule,
+    NgxTranslateModule
   ],
   templateUrl: './CT-prediction.component.html',
   styleUrl: './CT-prediction.component.css'
@@ -51,11 +53,23 @@ export class CTPredictionComponent {
       formData.append('image', this.file.file);
 
       this.http.post<any>('http://127.0.0.1:3000/CT-predict', formData).subscribe({
-        next: (response) => { this.prediction = response.prediction; },
+        next: (response) => { this.prediction = this.getTranslation(response.prediction); },
         error: (error) => { console.error('Error occurred while predicting the response:', error); }
       });
     } else {
-      this.errorMessage = 'No image selected. Please select an image to upload.';
+      this.errorMessage = 'error.no-image-selected';
+    }
+  }
+
+  private getTranslation(key: string): string {
+    if (key === 'normal') {
+      return 'CT-prediction.normal';
+    } else if (key === 'benign') {
+      return 'CT-prediction.benign';
+    } else if (key === 'malignant') {
+      return 'CT-prediction.malignant';
+    } else {
+      return 'CT-prediction.unknown';
     }
   }
 }

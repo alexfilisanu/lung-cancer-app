@@ -1,28 +1,34 @@
-<nav class="custom-navbar-container">
-  <div class="navbar-main-item">
-    <a href="CT-prediction"> TESTARE </a>
-  </div>
-  <div class="navbar-main-item">
-    <a href="survey-prediction"> TESTARE </a>
-  </div>
+<!DOCTYPE html>
 
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-list">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+
+  <link rel="stylesheet" href="../../assets/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+</head>
+
+<div class="custom-navbar-container">
+  <div class="row">
+    <div class="navbar-main-item col-lg-3">
+      <a href="CT-prediction">{{ 'button.upload-CT' | translate }}</a>
+    </div>
+    <div class="navbar-main-item col-lg-3">
+      <a href="survey-prediction">{{ 'button.consultation' | translate }}</a>
+    </div>
+    <ul class="navbar-list col-lg-6">
       <li class="navbar-item">
-        <a href="dashboard"> Home </a>
+        <a href="dashboard">{{ 'button.home' | translate }}</a>
       </li>
       <li class="navbar-item">
-        <a href="about"> About </a>
+        <a href="about">{{ 'button.about' | translate }}</a>
       </li>
       <li class="navbar-item">
-        <a href="departments.html"> Departments </a>
+        <a href="advices">{{ 'button.advices' | translate }}</a>
       </li>
       <li class="navbar-item">
-        <a href="advices"> Sfaturi </a>
-      </li>
-      <li class="navbar-item">
-        <a href="contact-us"> Contact Us </a>
+        <a href="contact-us">{{ 'button.contact' | translate }}</a>
       </li>
     </ul>
   </div>
-</nav>
+</div>

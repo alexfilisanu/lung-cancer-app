@@ -1,0 +1,107 @@
+{
+  "welcome": {
+    "title": "Bine ați venit la Detectorul de Cancer Pulmonar"
+  },
+  "about": {
+    "title-about": "Despre noi",
+    "content-about": "Suntem o echipă de dezvoltatori pasionați de utilizarea tehnologiei pentru îmbunătățirea sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din radiografiile toracice. Modelul nostru este antrenat pe un set de date de 100.000 de radiografii toracice și are o acuratețe de 95%. Sperăm că modelul nostru poate ajuta medicii să diagnosticheze cancerul pulmonar mai rapid și mai precis.",
+    "title-mission": "Misiunea noastră",
+    "content-mission": "Misiunea noastră este de a oferi o platformă ușor de utilizat care folosește cele mai recente tehnologii în domeniul învățării automate pentru a prezice riscul de cancer pulmonar cu o precizie ridicată. Ne propunem să facem detectarea precoce accesibilă tuturor, indiferent de originea sau locația lor.",
+    "title-help": "Cum ne poți ajuta",
+    "content-help": "Ne poți ajuta răspândind vestea despre platforma noastră și încurajând oamenii să facă screening pentru cancerul pulmonar. Detectarea precoce este cheia pentru îmbunătățirea ratei de supraviețuire, și credem că platforma noastră poate ajuta la salvarea de vieți.",
+    "title-privacy": "Politica de Confidențialitate și Securitate",
+    "content-privacy": "Luăm în serios confidențialitatea și securitatea dumneavoastră. Nu stocăm nicio informație personală despre dumneavoastră și nu partajăm datele dumneavoastră cu terțe părți. Toate datele sunt criptate și stocate în siguranță pe serverele noastre. Dacă aveți întrebări sau nelămuriri legate de politica noastră de confidențialitate și securitate, vă rugăm să ne contactați la",
+    "title-involvement": "Implică-te",
+    "content-involvement": "Suntem mereu în căutarea de voluntari care să ne ajute să îmbunătățim platforma noastră. Dacă sunteți interesat să vă implicați, vă rugăm să ne contactați la"
+  },
+  "contact": {
+    "title": "CONTACTEAZĂ-NE"
+  },
+  "CT-prediction": {
+    "drop-file": "Atașați fișierul aici",
+    "or": "sau",
+    "select-file": "Selectați un fișier",
+    "result": "Rezultatul predicției este",
+    "normal": "Normal",
+    "benign": "Benign",
+    "malignant": "Malign",
+    "unknown": "Necunoscut"
+  },
+  "survey-prediction": {
+    "title": "Formular de evaluare a riscului de cancer pulmonar",
+    "yes": "Da",
+    "no": "Nu",
+    "gender": "Sex",
+    "male": "Bărbat",
+    "female": "Femeie",
+    "age": "Vârstă",
+    "smoke": "Obișnuiți să fumați?",
+    "yellow-fingers": "Aveți degete îngălbenite?",
+    "anxiety": "Aveți simptome de anxietate?",
+    "peer-pressure": "Experimentați presiune socială?",
+    "chronic-disease": "Suferiți de o boală cronică?",
+    "fatigue": "Va simțiți obosit des?",
+    "allergy": "Aveți alergii?",
+    "wheezing": "Experimentați respirație șuierătoare?",
+    "alcohol": "Obișnuiți sa consumați alcool?",
+    "coughing": "Vă confruntați cu tuse des?",
+    "shortness-of-breath": "Aveți dificultăți de respirație?",
+    "swallowing-difficulty": "Aveți dificultăți la înghițire?",
+    "chest-pain": "Experimentați dureri în piept?",
+    "email-result": "Doriți să primiți rezultatul pe email?",
+    "cancer": "Risc crescut de cancer pulmonar",
+    "no-cancer": "Risc scăzut de cancer pulmonar",
+    "unknown": "Risc necunoscut"
+  },
+  "dashboard": {
+    "slide-1": "Detectarea precoce a cancerului pulmonar este cheia pentru îmbunătățirea ratei de supraviețuire. Cu ajutorul platformei noastre, puteți verifica riscul de cancer pulmonar în doar câteva secunde.",
+    "slide-2": "Platforma noastră folosește un model de învățare automată antrenat pe un set de date de 100.000 de radiografii toracice. Modelul nostru are o acuratețe de 95% și poate detecta cancerul pulmonar cu o precizie ridicată.",
+    "slide-3": "Pentru a verifica riscul de cancer pulmonar, încărcați o imagine cu o radiografie toracică și așteptați rezultatul. Rezultatul va fi afișat în câteva secunde și va indica dacă există un risc de cancer pulmonar.",
+    "review-1": {
+      "image": "../../assets/images/client.jpg",
+      "name": "John Doe",
+      "comment": "Platforma este ușor de utilizat și oferă rezultate precise. Recomand cu căldură această platformă tuturor celor care doresc să-și verifice riscul de cancer pulmonar."
+    },
+    "review-2": {
+      "image": "../../assets/images/client.jpg",
+      "name": "Jane Doe",
+      "comment": "Am folosit platforma pentru a verifica riscul de cancer pulmonar și am fost impresionată de precizia rezultatelor. Platforma este ușor de utilizat și oferă rezultate rapide."
+    },
+    "review-3": {
+      "image": "../../assets/images/client.jpg",
+      "name": "Alice Doe",
+      "comment": "Platforma este foarte utilă pentru cei care doresc să-și verifice riscul de cancer pulmonar. Recomand cu căldură această platformă tuturor celor care doresc să-și monitorizeze sănătatea."
+    },
+    "reviews": "Recenzii",
+    "services-title": "Serviciile noastre",
+    "services-content": "Oferim o gamă largă de servicii pentru a vă ajuta să vă verificați riscul de cancer pulmonar. De la verificarea riscului de cancer pulmonar la consultanță și tratament, suntem aici pentru a vă ajuta să vă mențineți sănătatea.",
+    "CT-interpreter": "Interpretare CT",
+    "virtual-consultation": "Consultație virtuală",
+    "lungs-health": "Sănătate pulmonară",
+    "contact-specialist": "Contactați un specialist",
+    "about-us-title": "Despre noi",
+    "about-us-content": "Suntem o echipă de dezvoltatori pasionați de utilizarea tehnologiei pentru îmbunătățirea sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din radiografiile toracice. Modelul nostru este antrenat pe un set de date de 100.000 de radiografii toracice și are o acuratețe de 95%. Sperăm că modelul nostru poate ajuta medicii să diagnosticheze cancerul pulmonar mai rapid și mai precis."
+  },
+  "button": {
+    "start": "Începeți",
+    "submit": "Încărcați",
+    "home": "Acasă",
+    "read-more": "Aflați mai mult",
+    "upload-CT": "Încărcați CT",
+    "consultation": "Consultație",
+    "about": "Despre noi",
+    "advices": "Sfaturi",
+    "contact": "Contact"
+  },
+  "placeholder": {
+    "name": "Numele dumneavoastră",
+    "phone": "Numărul de telefon",
+    "email": "Adresa de email",
+    "message": "Mesajul dumneavoastră",
+    "age": "Introduceți vârsta dumneavoastră"
+  },
+  "error": {
+    "no-image-selected": "Nicio imagine selectată. Vă rugăm să selectați o imagine și încercați din nou.",
+    "all-fields-required": "Toate câmpurile sunt obligatorii. Vă rugăm să completați toate câmpurile și încercați din nou."
+  }
+}

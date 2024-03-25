@@ -1,5 +1,8 @@
+<!DOCTYPE html>
+
 <head>
-  <title> Contact Us </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
 
   <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
   <link rel="stylesheet" href="../../assets/css/all.min.css" />
@@ -7,35 +10,28 @@
 
 <body>
   <div class="contact-us-container">
-    <div class="contact-us-header">
-        CONTACTEAZA-NE
-    </div>
+    <div class="contact-us-header">{{ 'contact.title' | translate }}</div>
 
     <form #contactUsForm="ngForm" class="contact-us-form">
       <div class="form-row">
         <div class="col-lg-5">
-          <input type="text" name="name" placeholder="Your Name" ngModel required />
+          <input type="text" name="name" placeholder="{{ 'placeholder.name' | translate }}" ngModel required />
         </div>
         <div class="col-lg-5">
-          <input type="text" name="phone" placeholder="Phone Number" ngModel required />
+          <input type="text" name="phone" placeholder="{{ 'placeholder.phone' | translate }}" ngModel required />
         </div>
       </div>
-
       <div class="form-row">
         <div class="col-lg-10">
-          <input type="email" name="email" placeholder="Email" ngModel required />
+          <input type="email" name="email" placeholder="{{ 'placeholder.email' | translate }}" ngModel required />
         </div>
       </div>
-
       <div class="form-row">
         <div class="col-lg-10">
-         <textarea name="message" placeholder="Message" ngModel required rows="5"></textarea>
+         <textarea name="message" placeholder="{{ 'placeholder.message' | translate }}" ngModel required rows="5"></textarea>
         </div>
       </div>
-
-      <button class="submit-btn">
-        Submit
-      </button>
+      <button class="submit-btn">{{ 'button.submit' | translate }}</button>
     </form>
   </div>
 </body>
