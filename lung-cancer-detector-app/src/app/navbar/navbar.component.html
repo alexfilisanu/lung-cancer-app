@@ -13,10 +13,10 @@
     <div class="navbar-main-item col-lg-3">
       <a href="CT-prediction">{{ 'button.upload-CT' | translate }}</a>
     </div>
-    <div class="navbar-main-item col-lg-3">
+    <div class="navbar-main-item col-lg-2">
       <a href="survey-prediction">{{ 'button.consultation' | translate }}</a>
     </div>
-    <ul class="navbar-list col-lg-6">
+    <ul class="navbar-list col-lg-7">
       <li class="navbar-item">
         <a href="dashboard">{{ 'button.home' | translate }}</a>
       </li>
@@ -28,6 +28,24 @@
       </li>
       <li class="navbar-item">
         <a href="contact-us">{{ 'button.contact' | translate }}</a>
+      </li>
+      <li class="navbar-item">
+        <a href="login">
+          <i class="fa fa-user"></i>
+          {{ 'button.login' | translate }}
+        </a>
+      </li>
+      <li class="navbar-item">
+        <div *ngIf="getCurrentLanguage() === 'ro'">
+          <button class="btn btn-link" (click)="changeLanguage('en')">
+            <img src="../../assets/images/country/ro.png" alt="ro-flag">
+          </button>
+        </div>
+        <div *ngIf="getCurrentLanguage() === 'en'">
+          <button class="btn btn-link" (click)="changeLanguage('ro')">
+            <img src="../../assets/images/country/en.png" alt="en-flag">
+          </button>
+        </div>
       </li>
     </ul>
   </div>

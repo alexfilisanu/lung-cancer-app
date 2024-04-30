@@ -1,6 +1,5 @@
 .custom-navbar-container {
   background-color: #178066;
-  align-items: center;
   padding: 2vh 0;
 }
 
@@ -40,4 +39,13 @@
   color: #ffffff;
   font-size: 25px;
   text-decoration: none;
+}
+
+.navbar-item button {
+  padding: 0;
+}
+
+.navbar-item img {
+  width: 45px;
+  height: 45px;
 }
