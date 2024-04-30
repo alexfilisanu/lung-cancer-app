@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {NgxTranslateModule} from "../translate/translate.module";
+import { NgxTranslateModule } from "../translate/translate.module";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-not-found',
@@ -12,4 +13,8 @@ import {NgxTranslateModule} from "../translate/translate.module";
 })
 export class NotFoundComponent {
 
+  constructor(private translate: TranslateService) {
+    const currentLanguage = sessionStorage.getItem('currentLanguage') || this.translate.getDefaultLang();
+    this.translate.use(currentLanguage);
+  }
 }

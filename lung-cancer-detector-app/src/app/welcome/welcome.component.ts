@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgxTranslateModule } from "../translate/translate.module";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-welcome',
@@ -12,4 +13,8 @@ import { NgxTranslateModule } from "../translate/translate.module";
 })
 export class WelcomeComponent {
 
+  constructor(private translate: TranslateService) {
+    const currentLanguage = sessionStorage.getItem('currentLanguage') || this.translate.getDefaultLang();
+    this.translate.use(currentLanguage);
+  }
 }
