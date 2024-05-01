@@ -69,8 +69,11 @@ export class RegisterComponent {
           });
         },
         error: (error) => {
-          this.errorMessage = error.error.message;
-          console.error('Error occurred while registering the user:', error.error.message);
+          const errorKey = error.error.message;
+          this.translate.get(errorKey).subscribe((message: string) => {
+            this.errorMessage = message;
+            console.error('Error occurred while registering the user:', message);
+          });
         }
       });
     } else if (this.areAllFieldsCompleted() && this.registerForm?.get("email").invalid) {

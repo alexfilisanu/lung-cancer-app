@@ -57,10 +57,10 @@ def register():
     password = data.get('password')
 
     if not all([name, email, password]):
-        return jsonify({'message': 'Missing required fields'}), 400
+        return jsonify({'message': 'error.all-fields-required'}), 400
 
     if check_email_exists(email):
-        return jsonify({'message': 'Email already exists'}), 400
+        return jsonify({'message': 'error.email-exists'}), 400
 
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
 

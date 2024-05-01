@@ -117,6 +117,7 @@
     "all-fields-required": "All fields are required. Please fill in all fields.",
     "invalid-email": "Invalid email address. Please enter a valid email address.",
     "invalid-password": "Invalid password. Password must be at least 6 characters long.",
-    "passwords-mismatch": "Passwords do not match. Please enter the same password in both fields."
+    "passwords-mismatch": "Passwords do not match. Please enter the same password in both fields.",
+    "email-exists": "An account with this email address already exists. Please use a different email address."
   }
 }
