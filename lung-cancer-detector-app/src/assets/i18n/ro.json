@@ -114,6 +114,9 @@
   },
   "error": {
     "no-image-selected": "Nicio imagine selectată. Vă rugăm să selectați o imagine și încercați din nou.",
-    "all-fields-required": "Toate câmpurile sunt obligatorii. Vă rugăm să completați toate câmpurile și încercați din nou."
+    "all-fields-required": "Toate câmpurile sunt obligatorii. Vă rugăm să completați toate câmpurile și încercați din nou.",
+    "invalid-email": "Adresa de email nu este validă. Vă rugăm să introduceți o adresă de email validă și încercați din nou.",
+    "invalid-password": "Parola trebuie să aibă cel puțin 6 caractere. Vă rugăm să introduceți o parolă validă și încercați din nou.",
+    "passwords-mismatch": "Parolele nu se potrivesc. Vă rugăm să introduceți aceeași parolă în ambele câmpuri și încercați din nou."
   }
 }

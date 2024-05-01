@@ -114,6 +114,9 @@
   },
   "error": {
     "no-image-selected": "No image selected. Please select an image to upload.",
-    "all-fields-required": "All fields are required. Please fill in all fields."
+    "all-fields-required": "All fields are required. Please fill in all fields.",
+    "invalid-email": "Invalid email address. Please enter a valid email address.",
+    "invalid-password": "Invalid password. Password must be at least 6 characters long.",
+    "passwords-mismatch": "Passwords do not match. Please enter the same password in both fields."
   }
 }

@@ -11,32 +11,33 @@
 <div class="auth-container">
   <div class="auth-header">{{ 'register.title' | translate }}</div>
 
-  <form #contactUsForm="ngForm" class="auth-form">
-    <div class="form-row">
+  <form [formGroup]="registerForm" class="auth-form" (ngSubmit)="onSubmit()">
+    <div class="form-row" [class.invalid-field]="isFormSubmitted && registerForm.get('name').invalid">
       <i class="fa-solid fa-user"></i>
-      <input type="text" name="name" placeholder="{{ 'placeholder.name' | translate }}" ngModel required/>
+      <input type="text" formControlName="name" placeholder="{{ 'placeholder.name' | translate }}"/>
     </div>
-    <div class="form-row">
+    <div class="form-row" [class.invalid-field]="isFormSubmitted && registerForm.get('email').invalid">
       <i class="fa-solid fa-envelope"></i>
-      <input type="email" name="email" placeholder="{{ 'placeholder.email' | translate }}" ngModel required/>
+      <input type="email" formControlName="email" placeholder="{{ 'placeholder.email' | translate }}"/>
     </div>
-    <div class="form-row">
+    <div class="form-row" [class.invalid-field]="isFormSubmitted && registerForm.get('password').invalid">
       <i class="fa-solid fa-lock"></i>
-      <input type="{{ isVisiblePassword ? 'text' : 'password' }}" name="password"
-             placeholder="{{ 'placeholder.password' | translate }}" ngModel required/>
+      <input type="{{ isVisiblePassword ? 'text' : 'password' }}" formControlName="password"
+             placeholder="{{ 'placeholder.password' | translate }}"/>
       <span class="toggle-password" (click)="togglePassword()">
         <i class="fa" [ngClass]="isVisiblePassword ? 'fa-eye' : 'fa-eye-slash'"></i>
       </span>
     </div>
-    <div class="form-row">
+    <div class="form-row" [class.invalid-field]="isFormSubmitted && registerForm.get('confirmPassword').invalid">
       <i class="fa-solid fa-lock"></i>
-      <input type="{{ isVisibleConfirmPassword ? 'text' : 'password' }}" name="confirmPassword"
-             placeholder="{{ 'placeholder.confirm-password' | translate }}" ngModel required/>
+      <input type="{{ isVisibleConfirmPassword ? 'text' : 'password' }}" formControlName="confirmPassword"
+             placeholder="{{ 'placeholder.confirm-password' | translate }}"/>
       <span class="toggle-password" (click)="toggleConfirmPassword()">
         <i class="fa" [ngClass]="isVisibleConfirmPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
       </span>
     </div>
     <button class="submit-btn">{{ 'button.login' | translate }}</button>
+    <div class="error-message">{{ errorMessage | translate }}</div>
     <p>{{ 'register.login-message' | translate }}
       <span><a href="login">{{ 'button.login' | translate }}</a></span>
     </p>

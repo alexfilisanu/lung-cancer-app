@@ -65,6 +65,11 @@ body {
   width: 70%;
 }
 
+.auth-form .form-row.invalid-field input {
+  border-bottom: 2px solid #d0342c;
+  color: #d0342c;
+}
+
 .auth-form .form-row i {
   position: absolute;
   top: 50%;
@@ -81,5 +86,13 @@ body {
 }
 
 .auth-form p {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.auth-container .error-message {
+  color: #d0342c;
+  width: 80%;
+  margin: 15px auto 0;
+  height: 50px;
+  font-size: 16px;
 }
