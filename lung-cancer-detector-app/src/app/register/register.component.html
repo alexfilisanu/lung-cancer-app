@@ -1,0 +1,44 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+
+  <link rel="stylesheet" href="../../assets/css/all.min.css"/>
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css"/>
+</head>
+
+<img class="full-page-image-container" src="../../assets/images/welcome.jpeg" alt="">
+
+<div class="auth-container">
+  <div class="auth-header">{{ 'register.title' | translate }}</div>
+
+  <form #contactUsForm="ngForm" class="auth-form">
+    <div class="form-row">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" name="name" placeholder="{{ 'placeholder.name' | translate }}" ngModel required/>
+    </div>
+    <div class="form-row">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" name="email" placeholder="{{ 'placeholder.email' | translate }}" ngModel required/>
+    </div>
+    <div class="form-row">
+      <i class="fa-solid fa-lock"></i>
+      <input type="{{ isVisiblePassword ? 'text' : 'password' }}" name="password"
+             placeholder="{{ 'placeholder.password' | translate }}" ngModel required/>
+      <span class="toggle-password" (click)="togglePassword()">
+        <i class="fa" [ngClass]="isVisiblePassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+      </span>
+    </div>
+    <div class="form-row">
+      <i class="fa-solid fa-lock"></i>
+      <input type="{{ isVisibleConfirmPassword ? 'text' : 'password' }}" name="confirmPassword"
+             placeholder="{{ 'placeholder.confirm-password' | translate }}" ngModel required/>
+      <span class="toggle-password" (click)="toggleConfirmPassword()">
+        <i class="fa" [ngClass]="isVisibleConfirmPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+      </span>
+    </div>
+    <button class="submit-btn">{{ 'button.login' | translate }}</button>
+    <p>{{ 'register.login-message' | translate }}
+      <span><a href="login">{{ 'button.login' | translate }}</a></span>
+    </p>
+  </form>
+</div>

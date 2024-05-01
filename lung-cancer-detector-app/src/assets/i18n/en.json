@@ -2,6 +2,14 @@
   "welcome": {
     "title": "Welcome to the Lung Cancer Detector"
   },
+  "login": {
+    "title": "Login to your account",
+    "register-message": "Don't have an account? "
+  },
+  "register": {
+    "title": "Create an account",
+    "login-message": "Already have an account? "
+  },
   "about": {
     "title-about": "About us",
     "content-about": "We are a team of developers who are passionate about using technology to improve healthcare. We have developed a machine learning model that can detect lung cancer from chest x-rays. Our model is trained on a dataset of 100,000 chest x-rays and has an accuracy of 95%. We hope that our model can help doctors to diagnose lung cancer more quickly and accurately.",
@@ -92,12 +100,15 @@
     "about": "About Us",
     "advices": "Advices",
     "contact": "Contact Us",
-    "login": "Login"
+    "login": "Login",
+    "register": "Register"
   },
   "placeholder": {
     "name": "Your Name",
     "phone": "Phone Number",
     "email": "Email",
+    "password": "Password",
+    "confirm-password": "Confirm Password",
     "message": "Your Message",
     "age": "Enter your age"
   },

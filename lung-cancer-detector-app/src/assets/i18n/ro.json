@@ -2,6 +2,14 @@
   "welcome": {
     "title": "Bine ați venit la Detectorul de Cancer Pulmonar"
   },
+  "login":{
+    "title": "Conectați-vă la contul dumneavoastră",
+    "register-message": "Nu aveți cont? "
+  },
+  "register":{
+    "title": "Creați-vă un cont nou",
+    "login-message": "Aveți deja un cont? "
+  },
   "about": {
     "title-about": "Despre noi",
     "content-about": "Suntem o echipă de dezvoltatori pasionați de utilizarea tehnologiei pentru îmbunătățirea sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din radiografiile toracice. Modelul nostru este antrenat pe un set de date de 100.000 de radiografii toracice și are o acuratețe de 95%. Sperăm că modelul nostru poate ajuta medicii să diagnosticheze cancerul pulmonar mai rapid și mai precis.",
@@ -92,12 +100,15 @@
     "about": "Despre noi",
     "advices": "Sfaturi",
     "contact": "Contact",
-    "login": "Conectare"
+    "login": "Conectați-vă",
+    "register": "Înregistrați-vă"
   },
   "placeholder": {
     "name": "Numele dumneavoastră",
     "phone": "Numărul de telefon",
     "email": "Adresa de email",
+    "password": "Parola dumneavoastră",
+    "confirm-password": "Confirmați parola",
     "message": "Mesajul dumneavoastră",
     "age": "Introduceți vârsta dumneavoastră"
   },

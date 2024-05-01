@@ -1,0 +1,11 @@
+.form-row input:focus,
+.submit-btn:focus {
+  outline: none;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+}

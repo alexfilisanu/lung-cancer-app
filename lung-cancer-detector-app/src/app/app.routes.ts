@@ -1,18 +1,28 @@
 import { Routes } from '@angular/router';
-import {AboutComponent} from "./about/about.component";
-import {DashboardComponent} from "./dashboard/dashboard.component";
-import {AdminLayoutComponent} from "./admin-layout/admin-layout.component";
-import {ContactUsComponent} from "./contact-us/contact-us.component";
-import {CTPredictionComponent} from "./CT-prediction/CT-prediction.component";
-import {WelcomeComponent} from "./welcome/welcome.component";
-import {NotFoundComponent} from "./not-found/not-found.component";
-import {AdvicesComponent} from "./advices/advices.component";
-import {SurveyPredictionComponent} from "./survey-prediction/survey-prediction.component";
+import { AboutComponent } from "./about/about.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AdminLayoutComponent } from "./admin-layout/admin-layout.component";
+import { ContactUsComponent } from "./contact-us/contact-us.component";
+import { CTPredictionComponent } from "./CT-prediction/CT-prediction.component";
+import { WelcomeComponent } from "./welcome/welcome.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
+import { AdvicesComponent } from "./advices/advices.component";
+import { SurveyPredictionComponent } from "./survey-prediction/survey-prediction.component";
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
 
 export const routes: Routes = [
   {
     path: '',
-    component: WelcomeComponent,
+    component: WelcomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: '',
