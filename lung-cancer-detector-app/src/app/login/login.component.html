@@ -11,20 +11,21 @@
 <div class="auth-container">
   <div class="auth-header">{{ 'login.title' | translate }}</div>
 
-  <form #contactUsForm="ngForm" class="auth-form">
-    <div class="form-row">
+  <form [formGroup]="loginForm" class="auth-form" (ngSubmit)="onSubmit()">
+    <div class="form-row" [class.invalid-field]="isFormSubmitted && loginForm.get('email').invalid">
       <i class="fa-solid fa-envelope"></i>
-      <input type="email" name="email" placeholder="{{ 'placeholder.email' | translate }}" ngModel required/>
+      <input type="email" formControlName="email" placeholder="{{ 'placeholder.email' | translate }}"/>
     </div>
-    <div class="form-row">
+    <div class="form-row" [class.invalid-field]="isFormSubmitted && loginForm.get('password').invalid">
       <i class="fa-solid fa-lock"></i>
-      <input type="{{ isVisible ? 'text' : 'password' }}" name="password"
-             placeholder="{{ 'placeholder.password' | translate }}" ngModel required/>
+      <input type="{{ isVisible ? 'text' : 'password' }}" formControlName="password"
+             placeholder="{{ 'placeholder.password' | translate }}"/>
       <span class="toggle-password" (click)="togglePassword()">
         <i class="fa" [ngClass]="isVisible ? 'fa-eye' : 'fa-eye-slash'"></i>
       </span>
     </div>
     <button class="submit-btn">{{ 'button.login' | translate }}</button>
+    <div class="error-message">{{ errorMessage | translate }}</div>
     <p>{{ 'login.register-message' | translate }}
       <span><a href="register">{{ 'button.register' | translate }}</a></span>
     </p>

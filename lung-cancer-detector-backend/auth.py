@@ -50,7 +50,7 @@ def register_user(name, email, password):
 def register():
     data = request.json
     if not data:
-        return jsonify({'error': 'No data provided'}), 400
+        return jsonify({'message': 'No data provided'}), 400
 
     name = data.get('name')
     email = data.get('email')
@@ -82,23 +82,44 @@ def check_credentials(email, password):
         conn.close()
 
 
+def get_user_info(email):
+    try:
+        with connect_to_db() as conn, conn.cursor() as cursor:
+            cursor.execute(
+                """
+                SELECT name, email FROM users WHERE email = %s
+                """, (email,))
+            user_data = cursor.fetchone()
+            if user_data:
+                name, email = user_data
+                return {'name': name, 'email': email}
+            else:
+                return None
+    except psycopg2.Error as e:
+        print("Database error:", e)
+        return None
+
+
 @app.route('/auth/login', methods=['POST'])
 def login():
     data = request.json
     if not data:
-        return jsonify({'error': 'No data provided'}), 400
+        return jsonify({'message': 'No data provided'}), 400
 
     email = data.get('email')
     password = data.get('password')
 
     if not email or not password:
-        return jsonify({'message': 'Email and password are required'}), 400
+        return jsonify({'message': 'error.all-fields-required'}), 400
 
     if not check_credentials(email, password):
-        return jsonify({'message': 'Invalid email or password'}), 401
+        return jsonify({'message': 'error.invalid-credentials'}), 401
 
-    token = 'token'
-    return jsonify({'token': token}), 200
+    user_info = get_user_info(email)
+    if not user_info:
+        return jsonify({'message': 'Failed to retrieve user information'}), 500
+
+    return jsonify({'message': 'Login successful', 'user': user_info}), 200
 
 
 if __name__ == "__main__":

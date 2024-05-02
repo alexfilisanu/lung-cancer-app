@@ -118,6 +118,7 @@
     "invalid-email": "Adresa de email nu este validă. Vă rugăm să introduceți o adresă de email validă și încercați din nou.",
     "invalid-password": "Parola trebuie să aibă cel puțin 6 caractere. Vă rugăm să introduceți o parolă validă și încercați din nou.",
     "passwords-mismatch": "Parolele nu se potrivesc. Vă rugăm să introduceți aceeași parolă în ambele câmpuri și încercați din nou.",
-    "email-exists": "Adresa de email există deja. Vă rugăm să utilizați o altă adresă de email și încercați din nou."
+    "email-exists": "Adresa de email există deja. Vă rugăm să utilizați o altă adresă de email și încercați din nou.",
+    "invalid-credentials": "Credențialele introduse sunt incorecte. Vă rugăm să verificați și încercați din nou."
   }
 }
