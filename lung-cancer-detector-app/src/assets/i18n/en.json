@@ -101,7 +101,8 @@
     "advices": "Advices",
     "contact": "Contact Us",
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "account": "Account"
   },
   "placeholder": {
     "name": "Your Name",

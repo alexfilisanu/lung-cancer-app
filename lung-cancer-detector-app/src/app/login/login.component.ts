@@ -50,6 +50,7 @@ export class LoginComponent {
 
       this.http.post<any>('http://127.0.0.1:3100/auth/login', formData).subscribe({
         next: (response) => {
+          sessionStorage.setItem('isAuthenticated', 'true');
           sessionStorage.setItem('user-name', response.user.name);
           sessionStorage.setItem('user-email', response.user.email);
           this.router.navigate(['/dashboard']).catch(error => {

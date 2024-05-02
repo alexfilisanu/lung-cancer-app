@@ -64,6 +64,7 @@ export class RegisterComponent {
 
       this.http.post<any>('http://127.0.0.1:3100/auth/register', formData).subscribe({
         next: () => {
+          sessionStorage.setItem('isAuthenticated', 'true');
           sessionStorage.setItem('user-name', formData.name);
           sessionStorage.setItem('user-email', formData.email);
           this.router.navigate(['/dashboard']).catch(error => {

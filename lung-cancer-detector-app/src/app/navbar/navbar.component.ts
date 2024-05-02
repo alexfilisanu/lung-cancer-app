@@ -22,6 +22,15 @@ export class NavbarComponent {
     this.translate.use(this.currentLanguage);
   }
 
+  public isAuthenticated(): boolean {
+    return sessionStorage.getItem('isAuthenticated') === 'true';
+  }
+
+  public logout(): void {
+    sessionStorage.clear();
+    this.translate.use(this.translate.getDefaultLang());
+  }
+
   public getCurrentLanguage(): string {
     return this.currentLanguage;
   }

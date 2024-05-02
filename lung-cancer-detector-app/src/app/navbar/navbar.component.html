@@ -29,10 +29,15 @@
       <li class="navbar-item">
         <a href="contact-us">{{ 'button.contact' | translate }}</a>
       </li>
-      <li class="navbar-item">
+      <li class="navbar-item" *ngIf="!isAuthenticated()">
         <a href="login">
           <i class="fa fa-user"></i>
           {{ 'button.login' | translate }}
+        </a>
+      </li>
+      <li class="navbar-item" *ngIf="isAuthenticated()">
+        <a href="account">
+          {{ 'button.account' | translate }}
         </a>
       </li>
       <li class="navbar-item">
@@ -46,6 +51,11 @@
             <img src="../../assets/images/country/en.png" alt="en-flag">
           </button>
         </div>
+      </li>
+      <li class="navbar-item" *ngIf="isAuthenticated()" (click)="logout()">
+        <a href="#">
+          <i class="fa fa-sign-out"></i>
+        </a>
       </li>
     </ul>
   </div>
