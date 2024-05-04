@@ -25,6 +25,12 @@
   "contact": {
     "title": "Contact Us"
   },
+  "account": {
+    "personal-info": "Personal Information",
+    "name": "Name",
+    "email": "Email",
+    "history": "Health History"
+  },
   "CT-prediction": {
     "drop-file": "Drop your file here",
     "or": "or",

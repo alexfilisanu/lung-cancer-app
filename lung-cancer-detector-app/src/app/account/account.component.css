@@ -1,0 +1,17 @@
+.personal-info h2,
+.history h2 {
+  padding: 30px 200px 10px;
+}
+
+.personal-info p {
+  padding: 0 100px;
+  font-size: 20px;
+}
+
+.personal-info::after {
+  content: "";
+  display: block;
+  width: 85%;
+  margin: 30px auto 0;
+  border-bottom: 3px solid #cccccc;
+}

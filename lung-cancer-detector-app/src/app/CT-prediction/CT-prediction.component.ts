@@ -23,6 +23,7 @@ export class CTPredictionComponent {
   public prediction: string = '';
   public errorMessage: string = '';
   public showUploadButton: boolean = true;
+  private isAuthenticated: boolean = sessionStorage.getItem('isAuthenticated') === 'true';
 
   constructor(private sanitizer: DomSanitizer, private http: HttpClient) {}
 
@@ -53,8 +54,13 @@ export class CTPredictionComponent {
       formData.append('image', this.file.file);
 
       this.http.post<any>('http://127.0.0.1:3000/CT-predict', formData).subscribe({
-        next: (response) => { this.prediction = this.getTranslation(response.prediction); },
-        error: (error) => { console.error('Error occurred while predicting the response:', error); }
+        next: (response) => {
+          this.prediction = this.getTranslation(response.prediction);
+          this.insertPrediction(response.prediction);
+        },
+        error: (error) => {
+          console.error('Error occurred while predicting the response:', error);
+        }
       });
     } else {
       this.errorMessage = 'error.no-image-selected';
@@ -70,6 +76,27 @@ export class CTPredictionComponent {
       return 'CT-prediction.malignant';
     } else {
       return 'CT-prediction.unknown';
+    }
+  }
+
+  private insertPrediction(prediction: string): void {
+    if (this.isAuthenticated) {
+      const userEmail = sessionStorage.getItem('user-email');
+      if (userEmail !== null) {
+        const insertData = new FormData();
+        insertData.append('user-email', userEmail);
+        insertData.append('image', this.file!.file);
+        insertData.append('prediction', prediction);
+        this.http.post<any>('http://127.0.0.1:3050/insert-ct-prediction', insertData).subscribe({
+          next: () => {
+          },
+          error: (error) => {
+            console.error('Error occurred while inserting prediction:', error);
+          }
+        });
+      } else {
+        console.error('User email not found in session storage.');
+      }
     }
   }
 }

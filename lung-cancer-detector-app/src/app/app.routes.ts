@@ -10,6 +10,7 @@ import { AdvicesComponent } from "./advices/advices.component";
 import { SurveyPredictionComponent } from "./survey-prediction/survey-prediction.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { AccountComponent } from "./account/account.component";
 
 export const routes: Routes = [
   {
@@ -51,6 +52,10 @@ export const routes: Routes = [
       {
         path: 'contact-us',
         component: ContactUsComponent
+      },
+      {
+        path: 'account',
+        component: AccountComponent
       }
     ]
   },

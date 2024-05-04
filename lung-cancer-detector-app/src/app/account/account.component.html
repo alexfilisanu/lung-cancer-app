@@ -1,0 +1,23 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account</title>
+
+  <link rel="stylesheet" href="../../assets/css/all.min.css"/>
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css"/>
+</head>
+
+<body>
+  <div class="personal-info">
+    <h2>{{ 'account.personal-info' | translate }}</h2>
+    <p>{{ 'account.name' | translate }}: {{ userName }}</p>
+    <p>{{ 'account.email' | translate }}: {{ userEmail }}</p>
+  </div>
+  <div class="history">
+    <h2>{{ 'account.history' | translate }}</h2>
+    <div *ngFor="let registration of registrations" class="registration">
+      <p>Result: {{ registration.result }}</p>
+      <p>Timestamp: {{ registration.timestamp }}</p>
+      <img [src]="registration.image" alt="CT Diagram">
+    </div>
+  </div>
+</body>

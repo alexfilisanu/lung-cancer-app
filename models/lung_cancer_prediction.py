@@ -50,7 +50,7 @@ def survey_preprocess_data(data):
 
 @app.route('/survey-predict', methods=['POST'])
 @cross_origin()
-def predict():
+def survey_predict():
     df = survey_preprocess_data(request.json)
     predictions = survey_model.predict(df)
     prediction_result = (predictions > 0.5).astype(int)
@@ -71,7 +71,7 @@ def preprocess_image(file):
 
 @app.route('/CT-predict', methods=['POST'])
 @cross_origin()
-def process_image():
+def ct_predict():
     image_file = request.files['image']
     preprocessed_img = preprocess_image(image_file)
     prediction = CT_model.predict(preprocessed_img)
