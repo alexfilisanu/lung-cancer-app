@@ -69,14 +69,13 @@ def get_registration():
                     JOIN predictions p ON cd.prediction_id = p.id
                     WHERE p.user_id = %s
                     ORDER BY p.timestamp DESC
-                    LIMIT 6
                 """, (user_id,))
 
         registrations = []
         for row in cursor.fetchall():
             image, result, timestamp = row
-            registrations.append({
-                'image': base64.b64encode(image).decode('utf-8'), 'result': result, 'timestamp': timestamp})
+            decoded_image = base64.b64encode(image).decode('utf-8')
+            registrations.append({'image': decoded_image, 'result': result, 'timestamp': timestamp})
 
         return jsonify({'registrations': registrations}), 200
     except Exception as e:

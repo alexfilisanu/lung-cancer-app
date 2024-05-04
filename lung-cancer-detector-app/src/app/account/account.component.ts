@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { NgxTranslateModule } from "../translate/translate.module";
 import { HttpClient } from "@angular/common/http";
-import {any} from "@tensorflow/tfjs";
-import {NgForOf} from "@angular/common";
+import { NgForOf, NgIf, NgStyle } from "@angular/common";
 
 @Component({
   selector: 'app-account',
   standalone: true,
   imports: [
     NgxTranslateModule,
-    NgForOf
+    NgForOf,
+    NgIf,
+    NgStyle
   ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
@@ -41,6 +42,31 @@ export class AccountComponent {
           console.error('Error fetching registration history:', error);
         }
       });
+    }
+  }
+
+  public getColor(result: string): string {
+    switch (result) {
+      case 'normal':
+        return 'rgba(147, 211, 251, 0.3)';
+      case 'benign':
+        return 'rgba(251, 249, 147, 0.3)';
+      case 'malignant':
+        return 'rgba(251, 178, 147, 0.3)';
+      default:
+        return '#ffffff';
+    }
+  }
+
+  public getKey(result: string): string {
+    if (result === 'normal') {
+      return 'CT-prediction.normal';
+    } else if (result === 'benign') {
+      return 'CT-prediction.benign';
+    } else if (result === 'malignant') {
+      return 'CT-prediction.malignant';
+    } else {
+      return 'CT-prediction.unknown';
     }
   }
 }

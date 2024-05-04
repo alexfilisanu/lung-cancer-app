@@ -14,10 +14,19 @@
   </div>
   <div class="history">
     <h2>{{ 'account.history' | translate }}</h2>
-    <div *ngFor="let registration of registrations" class="registration">
-      <p>Result: {{ registration.result }}</p>
-      <p>Timestamp: {{ registration.timestamp }}</p>
-      <img [src]="registration.image" alt="CT Diagram">
+    <div class="registrations-container">
+      <div class="row">
+        <ng-container *ngFor="let registration of registrations; let i = index">
+          <div class="col-md-3">
+            <div class="registration" [ngStyle]="{'background-color': getColor(registration.result)}">
+              <p>{{ registration.timestamp }}</p>
+              <img [src]="registration.image" alt="CT Diagram">
+              <p>{{ 'account.result' | translate }}: {{ getKey(registration.result) | translate }}</p>
+            </div>
+          </div>
+          <div *ngIf="(i + 1) % 4 === 0"></div>
+        </ng-container>
+      </div>
     </div>
   </div>
 </body>

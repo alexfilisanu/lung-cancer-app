@@ -15,3 +15,27 @@
   margin: 30px auto 0;
   border-bottom: 3px solid #cccccc;
 }
+
+.registrations-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.registration {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.registration p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.registration img {
+  height: 200px;
+  width: 200px;
+  margin: 20px;
+}

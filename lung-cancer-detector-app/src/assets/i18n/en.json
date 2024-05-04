@@ -29,7 +29,8 @@
     "personal-info": "Personal Information",
     "name": "Name",
     "email": "Email",
-    "history": "Health History"
+    "history": "Health History",
+    "result": "Result"
   },
   "CT-prediction": {
     "drop-file": "Drop your file here",

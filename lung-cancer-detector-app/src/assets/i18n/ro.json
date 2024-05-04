@@ -29,7 +29,8 @@
     "personal-info": "Informații personale",
     "name": "Nume",
     "email": "Email",
-    "history": "Istoric de sănătate"
+    "history": "Istoric de sănătate",
+    "result": "Rezultat"
   },
   "CT-prediction": {
     "drop-file": "Atașați fișierul aici",
