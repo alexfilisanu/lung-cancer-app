@@ -22,6 +22,7 @@ export class SurveyPredictionComponent {
   public errorMessage: string = '';
   public prediction: string = '';
   public isFormSubmitted: boolean = false;
+  private isAuthenticated: boolean = sessionStorage.getItem('isAuthenticated') === 'true';
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
 
@@ -54,7 +55,10 @@ export class SurveyPredictionComponent {
       this.errorMessage = '';
 
       this.http.post<any>('http://127.0.0.1:3000/survey-predict', formData).subscribe({
-        next: (response) => { this.prediction = this.getTranslation(response.prediction); },
+        next: (response) => {
+          this.prediction = this.getTranslation(response.prediction);
+          this.insertPrediction(response.prediction);
+        },
         error: (error) => { console.error('Error occurred while predicting the response:', error); }
       });
     } else {
@@ -69,6 +73,24 @@ export class SurveyPredictionComponent {
       return 'survey-prediction.no-cancer';
     } else {
       return 'survey-prediction.unknown';
+    }
+  }
+
+  private insertPrediction(prediction: string): void {
+    if (this.isAuthenticated) {
+      const userEmail = sessionStorage.getItem('user-email');
+      if (userEmail !== null) {
+        const insertData = this.surveyForm.value;
+        insertData['user-email'] = userEmail;
+        insertData['prediction'] = prediction;
+        this.http.post<any>('http://127.0.0.1:3050/insert-survey-prediction', insertData).subscribe({
+          error: (error) => {
+            console.error('Error occurred while inserting prediction:', error);
+          }
+        });
+      } else {
+        console.error('User email not found in session storage.');
+      }
     }
   }
 }

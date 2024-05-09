@@ -31,11 +31,15 @@ export class AccountComponent {
       const formData = new FormData();
       formData.append('user-email', this.userEmail);
 
-      this.http.post<any>('http://127.0.0.1:3050/get-registration', formData).subscribe({
+      this.http.post<any>('http://127.0.0.1:3050/get-registrations', formData).subscribe({
         next: (response) => {
           this.registrations = response.registrations;
-          this.registrations.forEach(registration => {
-            registration.image = 'data:image/png;base64,' + registration.image;
+          this.registrations.map(registration => {
+            if (registration.type === 'ct') {
+              registration.image = 'data:image/png;base64,' + registration.image;
+            } else if (registration.type === 'survey') {
+              registration.image = '../../assets/images/survey-logo.png';
+            }
           });
         },
         error: (error) => {
@@ -53,6 +57,10 @@ export class AccountComponent {
         return 'rgba(251, 249, 147, 0.3)';
       case 'malignant':
         return 'rgba(251, 178, 147, 0.3)';
+      case 'cancer':
+        return 'rgba(255, 71, 76, 0.3)';
+      case 'no-cancer':
+        return 'rgba(31, 214, 85, 0.3)';
       default:
         return '#ffffff';
     }
@@ -65,6 +73,10 @@ export class AccountComponent {
       return 'CT-prediction.benign';
     } else if (result === 'malignant') {
       return 'CT-prediction.malignant';
+    } else if (result === 'cancer') {
+      return 'survey-prediction.cancer';
+    } else if (result === 'no-cancer') {
+      return 'survey-prediction.no-cancer';
     } else {
       return 'CT-prediction.unknown';
     }
