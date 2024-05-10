@@ -25,6 +25,7 @@
 .slide-carousel-item {
   text-align: center;
   font-size: 25px;
+  padding: 50px;
   height: 300px;
   width: 100%;
   float: left;
