@@ -1,5 +1,5 @@
 .contact-us-container {
-  padding-top: 100px;
+  padding-top: 60px;
   justify-content: center;
   align-items: center;
 }
@@ -36,12 +36,6 @@
   resize: none;
 }
 
-.col-lg-5 input::placeholder,
-.col-lg-10 input::placeholder,
-.col-lg-10 textarea::placeholder {
-  color: #000000;
-}
-
 .col-lg-5 input:focus,
 .col-lg-10 input:focus,
 .col-lg-10 textarea:focus,
@@ -52,4 +46,21 @@
 .submit-btn {
   border-radius: 5px;
   font-size: 20px;
+  margin: 10px 0;
+}
+
+.messages-container {
+  width: 80%;
+  text-align: center;
+  height: 50px;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #d0342c;
+}
+
+.success-message {
+  color: #7abaff;
 }

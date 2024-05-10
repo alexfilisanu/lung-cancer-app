@@ -116,5 +116,24 @@ def get_registrations():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/add-contact-form', methods=['POST'])
+@cross_origin()
+def add_contact_form():
+    try:
+        name = request.json.get('name')
+        email = request.json.get('email')
+        phone = request.json.get('phone')
+        message = request.json.get('message')
+        cursor.execute(
+            """
+            INSERT INTO contact_forms (name, phone, email, message) VALUES (%s, %s, %s, %s)
+            """, (name, phone, email, message))
+        conn.commit()
+
+        return jsonify({'message': 'Contact form data inserted successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=3050, host='0.0.0.0')

@@ -23,7 +23,8 @@
     "content-involvement": "Suntem mereu în căutarea de voluntari care să ne ajute să îmbunătățim platforma noastră. Dacă sunteți interesat să vă implicați, vă rugăm să ne contactați la"
   },
   "contact": {
-    "title": "CONTACTEAZĂ-NE"
+    "title": "CONTACTEAZĂ-NE",
+    "success-message": "Mesajul dumneavoastră a fost trimis cu succes. Vă vom contacta în cel mai scurt timp posibil."
   },
   "account": {
     "personal-info": "Informații personale",
@@ -127,6 +128,7 @@
     "invalid-password": "Parola trebuie să aibă cel puțin 6 caractere. Vă rugăm să introduceți o parolă validă și încercați din nou.",
     "passwords-mismatch": "Parolele nu se potrivesc. Vă rugăm să introduceți aceeași parolă în ambele câmpuri și încercați din nou.",
     "email-exists": "Adresa de email există deja. Vă rugăm să utilizați o altă adresă de email și încercați din nou.",
-    "invalid-credentials": "Credențialele introduse sunt incorecte. Vă rugăm să verificați și încercați din nou."
+    "invalid-credentials": "Credențialele introduse sunt incorecte. Vă rugăm să verificați și încercați din nou.",
+    "contact-form-submission-failed": "Trimiterea formularului de contact a eșuat. Vă rugăm să încercați din nou."
   }
 }

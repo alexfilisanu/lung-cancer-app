@@ -12,26 +12,32 @@
   <div class="contact-us-container">
     <div class="contact-us-header">{{ 'contact.title' | translate }}</div>
 
-    <form #contactUsForm="ngForm" class="contact-us-form">
+    <form [formGroup]="contactUsForm" class="contact-us-form" (ngSubmit)="onSubmit()">
       <div class="form-row">
         <div class="col-lg-5">
-          <input type="text" name="name" placeholder="{{ 'placeholder.name' | translate }}" ngModel required />
+          <input type="text" formControlName="name" placeholder="{{ 'placeholder.name' | translate }}"/>
         </div>
         <div class="col-lg-5">
-          <input type="text" name="phone" placeholder="{{ 'placeholder.phone' | translate }}" ngModel required />
+          <input type="text" formControlName="phone" placeholder="{{ 'placeholder.phone' | translate }}"/>
         </div>
       </div>
       <div class="form-row">
         <div class="col-lg-10">
-          <input type="email" name="email" placeholder="{{ 'placeholder.email' | translate }}" ngModel required />
+          <input type="email" formControlName="email" placeholder="{{ 'placeholder.email' | translate }}"/>
         </div>
       </div>
       <div class="form-row">
         <div class="col-lg-10">
-         <textarea name="message" placeholder="{{ 'placeholder.message' | translate }}" ngModel required rows="5"></textarea>
+         <textarea formControlName="message" placeholder="{{ 'placeholder.message' | translate }}" rows="5"></textarea>
         </div>
       </div>
       <button class="submit-btn">{{ 'button.submit' | translate }}</button>
+      <div class="messages-container">
+        <div class="error-message">{{ errorMessage | translate }}</div>
+        <div *ngIf="isFormRegistered" class="success-message">
+          {{ 'contact.success-message' | translate }}
+        </div>
+      </div>
     </form>
   </div>
 </body>

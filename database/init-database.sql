@@ -23,3 +23,12 @@ CREATE TABLE survey_form_data (
     prediction_id INTEGER REFERENCES predictions(id),
     survey_form_data JSONB
 );
+
+CREATE TABLE contact_forms (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
