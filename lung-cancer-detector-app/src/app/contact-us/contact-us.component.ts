@@ -22,6 +22,8 @@ export class ContactUsComponent {
   public isFormSubmitted: boolean = false;
   public isFormRegistered: boolean = false;
   private isAuthenticated: boolean = sessionStorage.getItem('isAuthenticated') === 'true';
+  private userName: string | null = sessionStorage.getItem('user-name');
+  private userEmail: string | null = sessionStorage.getItem('user-email');
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
 
@@ -34,11 +36,9 @@ export class ContactUsComponent {
     });
 
     if (this.isAuthenticated) {
-      const name = sessionStorage.getItem('user-name');
-      const email = sessionStorage.getItem('user-email');
       this.contactUsForm.patchValue({
-        name: name,
-        email: email
+        name: this.userName,
+        email: this.userEmail
       });
     }
   }
@@ -54,6 +54,7 @@ export class ContactUsComponent {
       this.http.post<any>('http://127.0.0.1:3050/add-contact-form', formData).subscribe({
         next: () => {
           this.isFormRegistered = true;
+          this.sendEmail(formData.email, formData.name, formData.message);
         },
         error: (error) => {
           this.isFormRegistered = false;
@@ -65,5 +66,15 @@ export class ContactUsComponent {
       this.isFormRegistered = false;
       this.errorMessage = 'error.all-fields-required';
     }
+  }
+
+  private sendEmail(email: string, name: string, message: string): void {
+    this.http.post<any>('http://127.0.0.1:3200/send-contact-mail', { email, name, message }).subscribe({
+      next: () => {
+      },
+      error: (error) => {
+       console.error('Error sending email:', error);
+      }
+    });
   }
 }

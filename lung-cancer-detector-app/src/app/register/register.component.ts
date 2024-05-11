@@ -67,6 +67,7 @@ export class RegisterComponent {
           sessionStorage.setItem('isAuthenticated', 'true');
           sessionStorage.setItem('user-name', formData.name);
           sessionStorage.setItem('user-email', formData.email);
+          this.sendEmail(formData.email, formData.name);
           this.router.navigate(['/dashboard']).catch(error => {
             console.error('Navigation error:', error);
           });
@@ -88,6 +89,16 @@ export class RegisterComponent {
     } else {
       this.errorMessage = 'error.all-fields-required';
     }
+  }
+
+  private sendEmail(email: string, name: string): void {
+    this.http.post<any>('http://127.0.0.1:3200/send-registration-email', { email, name }).subscribe({
+        next: () => {
+        },
+        error: (error) => {
+            console.error('Error sending email:', error);
+        }
+    });
   }
 
   private areAllFieldsCompleted(): boolean {

@@ -58,6 +58,10 @@ export class SurveyPredictionComponent {
         next: (response) => {
           this.prediction = this.getTranslation(response.prediction);
           this.insertPrediction(response.prediction);
+          const email = sessionStorage.getItem('user-email');
+          if (formData.email && email) {
+            this.sendEmail(email, response.prediction);
+          }
         },
         error: (error) => { console.error('Error occurred while predicting the response:', error); }
       });
@@ -93,4 +97,14 @@ export class SurveyPredictionComponent {
       }
     }
   }
+
+    private sendEmail(email: string, prediction: string): void {
+      this.http.post<any>('http://127.0.0.1:3200/send-survey-result', { email, prediction }).subscribe({
+        next: () => {
+        },
+        error: (error) => {
+          console.error('Error sending email:', error);
+        }
+      });
+    }
 }
