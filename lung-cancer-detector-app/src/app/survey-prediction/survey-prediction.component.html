@@ -276,6 +276,9 @@
       <div class="messages-container">
         <div class="error-message">{{ errorMessage | translate }}</div>
         <div class="prediction-message">{{ prediction | translate }}</div>
+        <div *ngIf="prediction === 'survey-prediction.cancer'">
+          {{ 'survey-prediction.cancer-message' | translate }}
+        </div>
       </div>
     </form>
   </div>

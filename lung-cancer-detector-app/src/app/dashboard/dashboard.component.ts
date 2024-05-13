@@ -3,9 +3,18 @@ import { CommonModule } from "@angular/common";
 import { NgxTranslateModule } from "../translate/translate.module";
 
 export const Slides = [
-  'dashboard.slide-1',
-  'dashboard.slide-2',
-  'dashboard.slide-3',
+  {
+    text: 'dashboard.slide-1.text',
+    link: 'dashboard.slide-1.link'
+  },
+  {
+    text: 'dashboard.slide-2.text',
+    link: 'dashboard.slide-2.link'
+  },
+  {
+    text: 'dashboard.slide-3.text',
+    link: 'dashboard.slide-3.link'
+  }
 ]
 
 export const Reviews = [

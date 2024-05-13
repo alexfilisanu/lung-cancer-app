@@ -12,15 +12,19 @@
   },
   "about": {
     "title-about": "Despre noi",
-    "content-about": "Suntem o echipă de dezvoltatori pasionați de utilizarea tehnologiei pentru îmbunătățirea sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din radiografiile toracice. Modelul nostru este antrenat pe un set de date de 100.000 de radiografii toracice și are o acuratețe de 95%. Sperăm că modelul nostru poate ajuta medicii să diagnosticheze cancerul pulmonar mai rapid și mai precis.",
+    "content-about": "Scopul nostru este implicarea tehnologiei în progresul sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din tomografiile computerizate și un altul ce prezice riscul de cancer pe baza unui scurt formular. Modelul pentru radiografii este antrenat pe un set de date de peste 10.000 de CT-uri și are o acuratețe de 97,3%. Sperăm că modelul nostru va ajuta atât medicii, cât și pacienții să diagnosticheze cancerul pulmonar la timp, cu rezultate precise.",
     "title-mission": "Misiunea noastră",
-    "content-mission": "Misiunea noastră este de a oferi o platformă ușor de utilizat care folosește cele mai recente tehnologii în domeniul învățării automate pentru a prezice riscul de cancer pulmonar cu o precizie ridicată. Ne propunem să facem detectarea precoce accesibilă tuturor, indiferent de originea sau locația lor.",
+    "content-mission": "Misiunea noastră este de a oferi o platformă ușor de utilizat care folosește cele mai recente tehnologii în domeniul învățării automate pentru a prezice riscul de cancer pulmonar cu o precizie ridicată. Ne propunem să facem detectarea precoce accesibilă tuturor, indiferent de locația lor.",
     "title-help": "Cum ne poți ajuta",
     "content-help": "Ne poți ajuta răspândind vestea despre platforma noastră și încurajând oamenii să facă screening pentru cancerul pulmonar. Detectarea precoce este cheia pentru îmbunătățirea ratei de supraviețuire, și credem că platforma noastră poate ajuta la salvarea de vieți.",
     "title-privacy": "Politica de Confidențialitate și Securitate",
-    "content-privacy": "Luăm în serios confidențialitatea și securitatea dumneavoastră. Nu stocăm nicio informație personală despre dumneavoastră și nu partajăm datele dumneavoastră cu terțe părți. Toate datele sunt criptate și stocate în siguranță pe serverele noastre. Dacă aveți întrebări sau nelămuriri legate de politica noastră de confidențialitate și securitate, vă rugăm să ne contactați la",
+    "content-privacy": "Luăm în serios confidențialitatea și securitatea dumneavoastră. Nu stocăm nicio informație personală despre dumneavoastră și nu partajăm datele dumneavoastră cu terțe părți. Toate datele sunt criptate și stocate în siguranță pe serverele noastre. Dacă aveți întrebări sau nelămuriri legate de politica noastră de confidențialitate și securitate, vă rugăm să ne contactați prin formularul pus la dispoziție.",
     "title-involvement": "Implică-te",
-    "content-involvement": "Suntem mereu în căutarea de voluntari care să ne ajute să îmbunătățim platforma noastră. Dacă sunteți interesat să vă implicați, vă rugăm să ne contactați la"
+    "content-involvement": "Suntem mereu în căutarea de voluntari care să ne ajute să îmbunătățim platforma noastră. Dacă sunteți interesat să vă implicați, vă rugăm să ne contactați prin formularul pus la dispoziție."
+  },
+  "advices": {
+    "advice-1": "\tPrevenirea cancerului pulmonar se poate face, in primul rand, prin evitarea factorilor de risc precum fumatul, fumatul pasiv, poluantii din aer, substante chimice care pot predispune la aparitia cancerului pulmonar precum radonul si azbestul.\n\n\tPrevenirea cancerului pulmonar include masuri de prevenire primara si secundara.",
+    "advice-2": "\tPreventia primara are ca scop prevenirea aparitiei initiale a unei boli prin reducerea riscurilor si promovarea unui stil de viata si a unui mediu sanatos. In sanatatea publica, aceste masuri preventive includ renuntarea la fumat, implementarea politicilor de control al tutunului, abordarea riscurilor profesionale si reducerea nivelurilor de poluare ale aerului.\n\n\tPreventia secundara a cancerului pulmonar implica metode de screening care urmaresc sa detecteze boala in stadiile incipiente, inainte ca simptomele sa devina evidente. La populatia cu risc crescut de a dezvolta cancer pulmonar, detectarea precoce poate creste semnificativ sansele de succes ale tratamentului si rata de supravietuire. Metoda primara de screening pentru cancerul pulmonar este tomografia computerizata cu doze mici."
   },
   "contact": {
     "title": "CONTACTEAZĂ-NE",
@@ -38,10 +42,13 @@
     "or": "sau",
     "select-file": "Selectați un fișier",
     "result": "Rezultatul predicției este",
-    "normal": "Normal",
-    "benign": "Benign",
-    "malignant": "Malign",
-    "unknown": "Necunoscut"
+    "normal": "normal",
+    "benign": "benign",
+    "malignant": "malign",
+    "normal-message": "Tomografia computerizată arată o structură pulmonară normală. Nu sunt necesari pași suplimentari. Dacă aveți suspiciuni sau simptome, vă recomandăm să faceți un consult cu medicul dumneavoastră.",
+    "benign-message": "Tomografia computerizată arată o leziune benignă. La nivelul plămânilor există niște noduli pulmonari, formațiuni normale unite într-un mod anormal. Ele nu se răspândesc pe distanțe mari. Este recomandat să faceți un consult cu medicul dumneavoastră pentru a discuta despre următorii pași.",
+    "malignant-message": "Tomografia computerizată arată o leziune malignă, afecțiune caracterizată printr-o multiplicare necontrolată a celulelor epiteliale ale țesutului pulmonar. Este recomandat să faceți un consult cu medicul dumneavoastră pentru a discuta despre următorii pași.",
+    "unknown": "necunoscut"
   },
   "survey-prediction": {
     "title": "Formular de evaluare a riscului de cancer pulmonar",
@@ -67,36 +74,46 @@
     "email-result": "Doriți să primiți rezultatul pe email?",
     "cancer": "Risc crescut de cancer pulmonar",
     "no-cancer": "Risc scăzut de cancer pulmonar",
-    "unknown": "Risc necunoscut"
+    "unknown": "Risc necunoscut",
+    "cancer-message": "Vă recomandăm să faceți un consult cu medicul dumneavoastră pentru a discuta despre următorii pași."
   },
   "dashboard": {
-    "slide-1": "Detectarea precoce a cancerului pulmonar este cheia pentru îmbunătățirea ratei de supraviețuire. Cu ajutorul platformei noastre, puteți verifica riscul de cancer pulmonar în doar câteva secunde.",
-    "slide-2": "Platforma noastră folosește un model de învățare automată antrenat pe un set de date de 100.000 de radiografii toracice. Modelul nostru are o acuratețe de 95% și poate detecta cancerul pulmonar cu o precizie ridicată.",
-    "slide-3": "Pentru a verifica riscul de cancer pulmonar, încărcați o imagine cu o radiografie toracică și așteptați rezultatul. Rezultatul va fi afișat în câteva secunde și va indica dacă există un risc de cancer pulmonar.",
+    "slide-1": {
+      "text": "Cancerul pulmonar este cel mai frecvent diagnostic de cancer şi a doua cauză de mortalitate datorată cancerului pentru bărbaţii şi femeile din toată lumea. Acesta reprezintă 13% din totalul cancerelor şi 27% din totalul deceselor datorate cancerului.",
+      "link": "https://personalgenetics.ro/afectiune/cancerul-pulmonar/"
+    },
+    "slide-2": {
+      "text": "Poate fi prevenit cancerul? Se estimează că 30-50% din cancere pot fi prevenite. Prevenția este cea mai bună strategie pe termen lung pentru controlul cancerului.",
+      "link": "https://www.reginamaria.ro/articole-medicale/sfaturile-care-stau-la-baza-preventiei-cancerului"
+    },
+    "slide-3": {
+      "text": "Cancerul pulmonar reprezintă principala cauză a mortalității prin cancer la nivel mondial. Anual, se face responsabil de decesul a una din cinci persoane diagnosticate cu această boală.",
+      "link": "https://www.drmax.ro/articole/cancer-pulmonar"
+    },
     "review-1": {
-      "image": "../../assets/images/client.jpg",
-      "name": "John Doe",
-      "comment": "Platforma este ușor de utilizat și oferă rezultate precise. Recomand cu căldură această platformă tuturor celor care doresc să-și verifice riscul de cancer pulmonar."
+      "image": "../../assets/images/lc-profile.png",
+      "name": "Laura C.",
+      "comment": "Platforma oferă rezultate precise. Medicii mei au fost impresionați de rapiditatea aplicației in generarea rezultatelor."
     },
     "review-2": {
-      "image": "../../assets/images/client.jpg",
-      "name": "Jane Doe",
-      "comment": "Am folosit platforma pentru a verifica riscul de cancer pulmonar și am fost impresionată de precizia rezultatelor. Platforma este ușor de utilizat și oferă rezultate rapide."
+      "image": "../../assets/images/e-profile.png",
+      "name": "Elena",
+      "comment": "Am folosit platforma cu ușurință, ca un prim pas in călătoria de combatere a cancerului. Mulțumesc!"
     },
     "review-3": {
-      "image": "../../assets/images/client.jpg",
-      "name": "Alice Doe",
-      "comment": "Platforma este foarte utilă pentru cei care doresc să-și verifice riscul de cancer pulmonar. Recomand cu căldură această platformă tuturor celor care doresc să-și monitorizeze sănătatea."
+      "image": "../../assets/images/v-profile.png",
+      "name": "Victor",
+      "comment": "Aplicația m-a ajutat sa detectez la timp cancerul pulmonar. Recomand cu incredere această platformă tuturor celor care doresc să-și monitorizeze riscul de cancer pulmonar."
     },
     "reviews": "Recenzii",
     "services-title": "Serviciile noastre",
-    "services-content": "Oferim o gamă largă de servicii pentru a vă ajuta să vă verificați riscul de cancer pulmonar. De la verificarea riscului de cancer pulmonar la consultanță și tratament, suntem aici pentru a vă ajuta să vă mențineți sănătatea.",
+    "services-content": "Oferim o gamă largă de servicii pentru a vă ajuta să vă monitorizați riscul de cancer pulmonar. Platforma noastră folosește cea mai recentă tehnologie de învățare automată pentru a oferi rezultate precise și fiabile. Ne angajăm să oferim o experiență ușor de utilizat și accesibilă tuturor.",
     "CT-interpreter": "Interpretare CT",
     "virtual-consultation": "Consultație virtuală",
     "lungs-health": "Sănătate pulmonară",
     "contact-specialist": "Contactați un specialist",
     "about-us-title": "Despre noi",
-    "about-us-content": "Suntem o echipă de dezvoltatori pasionați de utilizarea tehnologiei pentru îmbunătățirea sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din radiografiile toracice. Modelul nostru este antrenat pe un set de date de 100.000 de radiografii toracice și are o acuratețe de 95%. Sperăm că modelul nostru poate ajuta medicii să diagnosticheze cancerul pulmonar mai rapid și mai precis."
+    "about-us-content": "Scopul nostru este implicarea tehnologiei în progresul sistemului medical. Am dezvoltat un model de învățare automată care poate detecta cancerul pulmonar din tomografiile computerizate și un altul ce prezice riscul de cancer pe baza unui scurt formular. Modelul pentru radiografii este antrenat pe un set de date de peste 10.000 de CT-uri și are o acuratețe de 97,3%. Sperăm că modelul nostru va ajuta atât medicii, cât și pacienții să diagnosticheze cancerul pulmonar la timp, cu rezultate precise."
   },
   "button": {
     "start": "Începeți",

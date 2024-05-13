@@ -12,15 +12,19 @@
   },
   "about": {
     "title-about": "About us",
-    "content-about": "We are a team of developers who are passionate about using technology to improve healthcare. We have developed a machine learning model that can detect lung cancer from chest x-rays. Our model is trained on a dataset of 100,000 chest x-rays and has an accuracy of 95%. We hope that our model can help doctors to diagnose lung cancer more quickly and accurately.",
+    "content-about": "Our goal is to involve technology in the advancement of the medical system. We developed a machine learning model that can detect lung cancer from CT scans and another that predicts cancer risk based on a short form. The X-ray model is trained on a dataset of over 10,000 CT scans and has an accuracy of 97.3%. We hope that our model will help both doctors and patients to diagnose lung cancer in time with accurate results.",
     "title-mission": "Our Mission",
-    "content-mission": "Our mission is to provide a user-friendly platform that leverages the latest in machine learning technology to predict lung cancer risk with high accuracy. We aim to make early detection accessible to everyone, regardless of their background or location.",
+    "content-mission": "Our mission is to provide an easy-to-use platform that uses the latest machine learning technologies to predict lung cancer risk with high accuracy. We aim to make early detection accessible to everyone, regardless of their location.",
     "title-help": "How you can help",
-    "content-help": "You can help us by spreading the word about our platform and encouraging people to get screened for lung cancer. Early detection is key to improving survival rates, and we believe that our platform can help save lives.",
+    "content-help": "You can help us by spreading the word about our platform and encouraging people to get screened for lung cancer. Early detection is key to improving survival rates, and we believe our platform can help save lives.",
     "title-privacy": "Privacy and Security Policy",
-    "content-privacy": "We take your privacy and security seriously. We do not store any personal information about you, and we do not share your data with any third parties. All data is encrypted and stored securely on our servers. If you have any questions or concerns about our privacy and security policy, please contact us at",
+    "content-privacy": "We take your privacy and security seriously. We do not store any personal information about you and do not share your data with third parties. All data is encrypted and stored securely on our servers. If you have any questions or concerns about our privacy and security policy, please contact us using the form provided.",
     "title-involvement": "Get Involved",
-    "content-involvement": "We are always looking for volunteers to help us improve our platform. If you are interested in getting involved, please contact us at"
+    "content-involvement": "We are always looking for volunteers to help us improve our platform. If you are interested in getting involved, please contact us using the form provided."
+  },
+  "advices": {
+    "advice-1": "The prevention of lung cancer can be done, first of all, by avoiding risk factors such as smoking, passive smoking, air pollutants, chemical substances that can predispose to the occurrence of lung cancer such as radon and asbestos.\n\nLung cancer prevention includes primary and secondary prevention measures.",
+    "advice-2": "Primary prevention aims to prevent the initial occurrence of a disease by reducing risks and promoting a healthy lifestyle and environment. In public health, these preventive measures include smoking cessation, implementing tobacco control policies, addressing occupational risks and reducing air pollution levels.\n\nSecondary prevention of lung cancer involves screening methods that seek to detect the disease in its early stages, before the symptoms become obvious. In the population at high risk of developing lung cancer, early detection can significantly increase the chances of successful treatment and the survival rate. The primary screening method for lung cancer is low-dose computed tomography."
   },
   "contact": {
     "title": "Contact Us",
@@ -38,10 +42,13 @@
     "or": "or",
     "select-file": "Select a file",
     "result": "The result of the prediction is",
-    "normal": "Normal",
-    "benign": "Benign",
-    "malignant": "Malignant",
-    "unknown": "Unknown"
+    "normal": "normal",
+    "benign": "benign",
+    "malignant": "malignant",
+    "normal-message": "Computed tomography shows a normal lung structure. No additional steps are required. If you have any suspicions or symptoms, we recommend that you consult your doctor.",
+    "benign-message": "Computed tomography shows a benign lesion. In the lungs there are some pulmonary nodules, normal formations united in an abnormal way. They do not spread over long distances. It is recommended that you consult with your doctor to discuss next steps.",
+    "malignant-message": "Computed tomography shows a malignant lesion, a condition characterized by an uncontrolled multiplication of the epithelial cells of the lung tissue. It is recommended that you make a consultation with your doctor to discuss the next steps.",
+    "unknown": "unknown"
   },
   "survey-prediction": {
     "title": "Lung Cancer Risk Prediction",
@@ -67,28 +74,38 @@
     "email-result": "Do you want to receive the result by email?",
     "cancer": "High risk of lung cancer",
     "no-cancer": "Low risk of lung cancer",
-    "unknown": "Unknown risk of lung cancer"
+    "unknown": "Unknown risk of lung cancer",
+    "cancer-message": "We recommend that you consult with your doctor to discuss next steps."
   },
   "dashboard": {
-    "slide-1": "Early detection of lung cancer is key to improving survival rates. With the help of our platform, you can check your risk of lung cancer in just a few seconds.",
-    "slide-2": "Our platform uses a machine learning model trained on a dataset of 100,000 chest x-rays. Our model has an accuracy of 95% and can detect lung cancer with high precision.",
-    "slide-3": "To check your risk of lung cancer, upload an image of a chest x-ray and wait for the result. The result will be displayed in a few seconds and will indicate whether there is a risk of lung cancer.",
-    "reviews": "Reviews",
+    "slide-1": {
+      "text": "Lung cancer is the most common cancer diagnosis and the second leading cause of cancer death for men and women worldwide. This is 13% of all cancers and 27% of all cancer deaths.",
+      "link": "https://personalgenetics.ro/afectiune/cancerul-pulmonar/"
+    },
+    "slide-2": {
+      "text": "Can cancer be prevented? It is estimated that 30-50% of cancers can be prevented. Prevention is the best long-term strategy for cancer control.",
+      "link": "https://www.reginamaria.ro/articole-medicale/sfaturile-care-stau-la-baza-preventiei-cancerului"
+    },
+    "slide-3": {
+      "text": "Lung cancer is the main cause of cancer mortality worldwide. Annually, it is responsible for the death of one out of five people diagnosed with this disease.",
+      "link": "https://www.drmax.ro/articole/cancer-pulmonar"
+    },
     "review-1": {
-      "image": "../../assets/images/client.jpg",
-      "name": "John Doe",
+      "image": "../../assets/images/lc-profile.png",
+      "name": "Laura C.",
       "comment": "The platform is easy to use and provides precise results. I highly recommend this platform to anyone looking to check their risk of lung cancer."
     },
     "review-2": {
-      "image": "../../assets/images/client.jpg",
-      "name": "Jane Doe",
+      "image": "../../assets/images/e-profile.png",
+      "name": "Elena",
       "comment": "I used the platform to check my risk of lung cancer and was impressed by the accuracy of the results. The platform is user-friendly and provides quick results."
     },
     "review-3": {
-      "image": "../../assets/images/client.jpg",
-      "name": "Alice Doe",
+      "image": "../../assets/images/v-profile.png",
+      "name": "Victor",
       "comment": "The platform is very useful for those who want to check their risk of lung cancer. I highly recommend this platform to anyone looking to monitor their health."
     },
+    "reviews": "Reviews",
     "services-title": "Our Services",
     "services-content": "We offer a range of services to help you monitor your risk of lung cancer. Our platform uses the latest in machine learning technology to provide accurate and reliable results. We are committed to providing a user-friendly experience that is accessible to everyone.",
     "CT-interpreter": "CT Interpreter",
@@ -96,7 +113,7 @@
     "lungs-health": "Lungs Health",
     "contact-specialist": "Contact Specialist",
     "about-us-title": "About Us",
-    "about-us-content": "We are a team of developers who are passionate about using technology to improve healthcare. We have developed a machine learning model that can detect lung cancer from chest x-rays. Our model is trained on a dataset of 100,000 chest x-rays and has an accuracy of 95%. We hope that our model can help doctors to diagnose lung cancer more quickly and accurately."
+    "about-us-content": "Our goal is to involve technology in the advancement of the medical system. We developed a machine learning model that can detect lung cancer from CT scans and another that predicts cancer risk based on a short form. The X-ray model is trained on a dataset of over 10,000 CT scans and has an accuracy of 97.3%. We hope that our model will help both doctors and patients to diagnose lung cancer in time with accurate results."
   },
   "button": {
     "start": "Get Started",

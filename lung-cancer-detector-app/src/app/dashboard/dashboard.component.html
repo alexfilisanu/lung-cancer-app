@@ -16,8 +16,10 @@
     <div class="slide-carousel">
       <div class="carousel-inner">
         <div class="slide-carousel-item">
-          <a>{{ slides[currentSlideIndex] | translate }}</a>
-          <button type="button" class="carousel-item-btn">{{ 'button.read-more' | translate }}</button>
+          <a>{{ slides[currentSlideIndex].text | translate }}</a>
+          <a href="{{ slides[currentSlideIndex].link | translate }}" type="button" class="carousel-item-btn">
+            {{ 'button.read-more' | translate }}
+          </a>
         </div>
       </div>
       <div class="slide-carousel-controls">
@@ -79,7 +81,7 @@
   </div>
 
   <div class="review-container">
-    <h1>Testimonial</h1>
+    <h1>{{ "dashboard.reviews" | translate }}</h1>
     <div class="review-carousel">
       <div class="carousel-inner">
         <div class="review-carousel-item">

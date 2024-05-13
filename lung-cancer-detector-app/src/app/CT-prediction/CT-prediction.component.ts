@@ -21,6 +21,7 @@ export class CTPredictionComponent {
   public file: FileHandle | null = null;
   public imageUrl: SafeResourceUrl | null = null;
   public prediction: string = '';
+  public predictionMessage: string = '';
   public errorMessage: string = '';
   public showUploadButton: boolean = true;
   private isAuthenticated: boolean = sessionStorage.getItem('isAuthenticated') === 'true';
@@ -55,7 +56,8 @@ export class CTPredictionComponent {
 
       this.http.post<any>('http://127.0.0.1:3000/CT-predict', formData).subscribe({
         next: (response) => {
-          this.prediction = this.getTranslation(response.prediction);
+          this.prediction = this.getPredictionTranslation(response.prediction);
+          this.predictionMessage = this.getMessageTranslation(response.prediction);
           this.insertPrediction(response.prediction);
         },
         error: (error) => {
@@ -67,7 +69,7 @@ export class CTPredictionComponent {
     }
   }
 
-  private getTranslation(key: string): string {
+  private getPredictionTranslation(key: string): string {
     if (key === 'normal') {
       return 'CT-prediction.normal';
     } else if (key === 'benign') {
@@ -76,6 +78,18 @@ export class CTPredictionComponent {
       return 'CT-prediction.malignant';
     } else {
       return 'CT-prediction.unknown';
+    }
+  }
+
+  private getMessageTranslation(key: string): string {
+    if (key === 'normal') {
+      return 'CT-prediction.normal-message';
+    } else if (key === 'benign') {
+      return 'CT-prediction.benign-message';
+    } else if (key === 'malignant') {
+      return 'CT-prediction.malignant-message';
+    } else {
+      return '';
     }
   }
 

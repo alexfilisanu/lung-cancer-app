@@ -1,4 +1,16 @@
 img {
-  height: 400px;
-  width: 500px;
+  max-height: 450px;
+  padding: 0 50px 30px;
+}
+
+p {
+  font-size: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  white-space: pre-wrap;
+  padding-top: 20px;
+}
+
+.col-md-7 p {
+  padding-top: 100px;
 }

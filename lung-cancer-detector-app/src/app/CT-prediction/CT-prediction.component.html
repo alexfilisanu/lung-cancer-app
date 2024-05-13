@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CT Prediction</title>
 
-  <link rel="stylesheet" href="../../assets/css/all.min.css" />
-  <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../assets/css/all.min.css"/>
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css"/>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <i class="fa-solid fa-cloud-arrow-up"></i>
         <h4>{{ 'CT-prediction.drop-file' | translate }}</h4>
         <h6>{{ 'CT-prediction.or' | translate }}</h6>
-        <input type="file" id="file-img" (change)="onFileSelected($event)" accept="image/*" style="display:none;" />
+        <input type="file" id="file-img" (change)="onFileSelected($event)" accept="image/*" style="display:none;"/>
         <label for="file-img" class="select-btn">{{ 'CT-prediction.select-file' | translate }}</label>
       </div>
     </div>
@@ -30,13 +30,15 @@
     <button *ngIf="showUploadButton" class="submit-btn" (click)="upload()">
       {{ 'button.submit' | translate }}
     </button>
+  </div>
 
-    <div class="error-message">
-      {{ errorMessage | translate }}
-    </div>
+  <div class="error-message">
+    {{ errorMessage | translate }}
+  </div>
 
-    <div *ngIf="!showUploadButton && prediction !== ''" class="prediction-result">
-      {{ 'CT-prediction.result' | translate }}<br>{{ prediction | translate }}
-    </div>
+  <div *ngIf="!showUploadButton && prediction !== ''" class="prediction-result">
+    {{ 'CT-prediction.result' | translate }}: {{ prediction | translate }}
+    <br><br>
+    <p>{{ predictionMessage | translate }}</p>
   </div>
 </body>
