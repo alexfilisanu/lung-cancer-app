@@ -15,7 +15,7 @@ CORS(app, origins=['http://127.0.0.1:4200'])
 script_dir = os.path.dirname(__file__)
 survey_model_path = os.path.join(script_dir, "survey-lung-cancer-detector", "survey_lung_cancer_model.pkl")
 survey_model = joblib.load(survey_model_path)
-CT_model_path = os.path.join(script_dir, "CT-lung-cancer-detector", "CT_lung_cancer_model.keras")
+CT_model_path = os.path.join(script_dir, "CT-lung-cancer-detector", "CT_lung_cancer_model_alexnet.keras")
 CT_model = tf.keras.models.load_model(CT_model_path)
 
 survey_case_labels = ['no-cancer', 'cancer']
@@ -61,10 +61,14 @@ def survey_predict():
 
 def preprocess_image(file):
     img = Image.open(file).convert('RGB')
-    img_resize = img.resize((224, 224))
+    img_resize = img.resize((227, 227))
     img_array = image.img_to_array(img_resize)
-    img_expand = np.expand_dims(img_array, axis=0)
-    preprocessed_img = tf.keras.applications.mobilenet_v2.preprocess_input(img_expand)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array = img_array.astype('float32')
+
+    # Subtract ImageNet mean for AlexNet preprocessing
+    mean = np.array([123.68, 116.779, 103.939], dtype=np.float32)
+    preprocessed_img = img_array - mean
 
     return preprocessed_img
 
