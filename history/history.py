@@ -1,17 +1,19 @@
 import base64
 import json
+import os
+
 import psycopg2
 from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=['http://127.0.0.1:4200'])
+CORS(app)
 
 conn = psycopg2.connect(
-    host="localhost",
-    database="lung-cancer-db",
-    user="postgres",
-    password="postgres"
+    host=os.getenv("POSTGRES_HOST", "postgres-db"),
+    database=os.getenv("POSTGRES_DB", "lung-cancer-db"),
+    user=os.getenv("POSTGRES_USER", "postgres"),
+    password=os.getenv("POSTGRES_PASSWORD", "postgres")
 )
 cursor = conn.cursor()
 
@@ -31,7 +33,6 @@ def get_user_id(email):
 
 
 @app.route('/insert-ct-prediction', methods=['POST'])
-@cross_origin()
 def insert_ct_prediction():
     try:
         image_file = request.files['image']
@@ -55,7 +56,6 @@ def insert_ct_prediction():
 
 
 @app.route('/insert-survey-prediction', methods=['POST'])
-@cross_origin()
 def insert_survey_prediction():
     try:
         survey_data = request.json
@@ -80,7 +80,6 @@ def insert_survey_prediction():
 
 
 @app.route('/get-registrations', methods=['POST'])
-@cross_origin()
 def get_registrations():
     try:
         email = request.form.get('user-email')
@@ -117,7 +116,6 @@ def get_registrations():
 
 
 @app.route('/add-contact-form', methods=['POST'])
-@cross_origin()
 def add_contact_form():
     try:
         name = request.json.get('name')

@@ -1,4 +1,5 @@
 import hashlib
+import os
 
 import psycopg2
 from flask import Flask, request, jsonify
@@ -10,10 +11,10 @@ CORS(app)
 
 def connect_to_db():
     return psycopg2.connect(
-        host="localhost",
-        database="lung-cancer-db",
-        user="postgres",
-        password="postgres"
+        host=os.getenv("POSTGRES_HOST", "postgres-db"),
+        database=os.getenv("POSTGRES_DB", "lung-cancer-db"),
+        user=os.getenv("POSTGRES_USER", "postgres"),
+        password=os.getenv("POSTGRES_PASSWORD", "postgres")
     )
 
 

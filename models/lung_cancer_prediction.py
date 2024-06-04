@@ -1,16 +1,17 @@
 import os
+
 import joblib
 import numpy as np
 import pandas as pd
 import tensorflow as tf
 from PIL import Image
 from flask import Flask, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from keras.preprocessing import image
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-CORS(app, origins=['http://127.0.0.1:4200'])
+CORS(app)
 
 script_dir = os.path.dirname(__file__)
 survey_model_path = os.path.join(script_dir, "survey-lung-cancer-detector", "survey_lung_cancer_model.pkl")
@@ -49,7 +50,6 @@ def survey_preprocess_data(data):
 
 
 @app.route('/survey-predict', methods=['POST'])
-@cross_origin()
 def survey_predict():
     df = survey_preprocess_data(request.json)
     predictions = survey_model.predict(df)
@@ -74,7 +74,6 @@ def preprocess_image(file):
 
 
 @app.route('/CT-predict', methods=['POST'])
-@cross_origin()
 def ct_predict():
     image_file = request.files['image']
     preprocessed_img = preprocess_image(image_file)
@@ -86,4 +85,4 @@ def ct_predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000)
+    app.run(debug=True, port=3000, host='0.0.0.0')

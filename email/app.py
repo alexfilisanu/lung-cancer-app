@@ -1,21 +1,22 @@
+import os
+
 from flask import Flask, request, jsonify
-from flask_cors import cross_origin, CORS
+from flask_cors import CORS
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
 CORS(app)
 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'lungcancerdetector@gmail.com'
-app.config['MAIL_PASSWORD'] = 'awft bcge uxws naqi'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
+app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME', 'lungcancerdetector@gmail.com')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD', 'ebvx pcdf bksy dmsf')
+app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'true').lower() == 'true'
+app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL', 'false').lower() == 'true'
 mail = Mail(app)
 
 
 @app.route("/send-registration-email", methods=['POST'])
-@cross_origin()
 def send_registration_email():
     email = request.json.get('email')
     name = request.json.get('name')
@@ -38,7 +39,6 @@ def send_registration_email():
 
 
 @app.route("/send-survey-result", methods=['POST'])
-@cross_origin()
 def send_survey_result():
     email = request.json.get('email')
     prediction = request.json.get('prediction')
@@ -61,7 +61,6 @@ def send_survey_result():
 
 
 @app.route("/send-contact-mail", methods=['POST'])
-@cross_origin()
 def send_contact_mail():
     email = request.json.get('email')
     name = request.json.get('name')
@@ -85,4 +84,4 @@ def send_contact_mail():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3200)
+    app.run(debug=True, port=3200, host='0.0.0.0')
